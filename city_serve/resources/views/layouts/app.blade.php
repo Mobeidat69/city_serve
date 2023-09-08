@@ -40,7 +40,7 @@
         <header class="site-navbar mt-3">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="site-logo col-6"><a href="{{ url('/') }}">JobBoard</a></div>
+                    <div class="site-logo col-6"><a href="{{ url('/') }}">City serve</a></div>
 
                     <nav class="mx-auto site-navigation">
                         <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -176,12 +176,8 @@
           <div class="col-6 col-md-3 mb-4 mb-md-0">
             <h3>Search Trending</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Graphic Design</a></li>
-              <li><a href="#">Web Developers</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
+              <li><a href="#">Apply for a volunteering opportunity</a></li>
+              
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
@@ -216,7 +212,7 @@
           <div class="col-12">
             <p class="copyright"><small>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>. Downloaded from <a href="https://themeslab.org/" target="_blank">Themeslab</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | City Serve, Serving Communities with <i class="icon-heart text-danger" aria-hidden="true"></i>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
           </div>
         </div>
