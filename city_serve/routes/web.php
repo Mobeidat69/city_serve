@@ -20,8 +20,18 @@ Route::get('/', function () {
 */
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
+Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
+// });
 
 
+// Auth::routes();
+// Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('home');
+
+Route::get('/jobs/single/{id}',[App\Http\Controllers\Jobs\JobsController::class,'single'])->name('single.job');
+=======
+Route::group(['prefix' => 'admins', 'middleware' => 'auth:admin'], function () {
+    Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.index');
+});
 
 Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
 // });
@@ -31,3 +41,7 @@ Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])-
 // Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('home');
 
 Route::get('/jobs/single/{id}',[App\Http\Controllers\Jobs\JobsController::class,'single'])->name('single.job');
+=======
+Route::group(['prefix' => 'admins', 'middleware' => 'auth:admin'], function () {
+    Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.index');
+});
