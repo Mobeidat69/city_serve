@@ -24,3 +24,7 @@ Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check
 Route::group(['prefix' => 'admins', 'middleware' => 'auth:admin'], function () {
     Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.index');
 });
+    
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
