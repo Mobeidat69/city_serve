@@ -1,10 +1,8 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\Admins\AdminsController;
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admins\AdminsController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,7 +20,7 @@ Route::get('/', function () {
 */
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
-Route::group(['prefix' => 'admins' , 'middleware' => 'auth:admin'], function(){
+
 
 
 Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
