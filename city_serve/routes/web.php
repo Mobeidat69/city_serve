@@ -20,15 +20,8 @@ Route::get('/', function () {
 */
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
-Route::get('admin', [AdminsController::class, 'index'])->name('admins.dashboard');
-Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 
-Route::get('/test', function () {
-    return view('layouts.app');
+Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
 });
