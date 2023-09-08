@@ -24,4 +24,10 @@ Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check
 
 
 Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
-});
+// });
+
+
+// Auth::routes();
+// Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('home');
+
+Route::get('/jobs/single/{id}',[App\Http\Controllers\Jobs\JobsController::class,'single'])->name('single.job');
