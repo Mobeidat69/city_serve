@@ -21,7 +21,6 @@ Route::get('/', function () {
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
 
-
-
-Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
+Route::group(['prefix' => 'admins', 'middleware' => 'auth:admin'], function () {
+    Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.index');
 });
