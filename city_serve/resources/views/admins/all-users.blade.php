@@ -6,9 +6,12 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
+                    <h5 class="card-title mb-4 d-inline">Users</h5>
+                    <a href="{{ route('create.user') }}" class="btn btn-primary mb-4 text-center float-right">Create
+                        Users</a>
                     @if (\Session::has('create'))
-                        <div id="success-alert" class="alert alert-success">
-                            {!! \Session::get('create') !!}
+                        <div id="success-alert" class="alert mt-4 alert-success">
+                            {!! \Session::get('create') !!} 
                         </div>
 
                         <script>
@@ -17,38 +20,34 @@
                             }, 5000);
                         </script>
                     @endif
-
-                    <h5 class="card-title mb-4 d-inline">Categories</h5>
-                    <a href="{{ route('create.category') }}" class="btn btn-primary mb-4 text-center float-right">Create
-                        Categories</a>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">picture</th>
-                                <th scope="col">name</th>
+                                <th scope="col">username</th>
+                                <th scope="col">email</th>
                                 <th scope="col">update</th>
                                 <th scope="col">delete</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $category)
+                            @foreach ($users as $user)
                                 <tr>
-                                    <th scope="row">{{ $category->id }}</th>
-                                    <td ><img src="{{$category->image}}" alt="{{$category->id}}-picture" style="max-width: 200px"></td>
-                                    <td>{{ $category->name }}</td>
-                                    <td><a href="{{ route('edit.category', $category->id) }}"
-                                            class="btn btn-warning text-white text-center ">Update </a></td>
+                                    <th scope="row">{{ $user->id }}</th>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td><a href="{{ route('edit.user', $user->id) }}"
+                                            class="btn btn-warning text-white text-center ">Update</a></td>
                                     <td>
                                         <a href="#" class="btn btn-danger text-center" data-toggle="modal"
-                                            data-target="#confirmDelete{{ $category->id }}">Delete</a>
-                                        <div class="modal fade" id="confirmDelete{{ $category->id }}" tabindex="-1"
-                                            role="dialog" aria-labelledby="confirmDeleteLabel{{ $category->id }}"
+                                            data-target="#confirmDelete{{ $user->id }}">Delete</a>
+                                        <div class="modal fade" id="confirmDelete{{ $user->id }}" tabindex="-1"
+                                            role="dialog" aria-labelledby="confirmDeleteLabel{{ $user->id }}"
                                             aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="confirmDeleteLabel{{ $category->id }}">
+                                                        <h5 class="modal-title" id="confirmDeleteLabel{{ $user->id }}">
                                                             Confirm Delete</h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
@@ -56,12 +55,12 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Are you sure you want to delete ( {{ $category->name }} ) category?
+                                                        Are you sure you want to delete ( {{ $user->name }} ) user?
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">Cancel</button>
-                                                        <form action="{{ route('delete.category', $category->id) }}"
+                                                        <form action="{{ route('delete.user', $user->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')

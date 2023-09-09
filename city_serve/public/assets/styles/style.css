@@ -34,9 +34,27 @@ body {
         padding-bottom: 40px;
     }
 }
-.navbar-brand{
+.navbar-brand {
     width: 170px;
-  }
-.navbar-brand img{
+}
+.navbar-brand img {
     width: 100%;
-  }
+}
+
+.custom-file-button input[type="file"] {
+    margin-left: -2px !important;
+
+    &::-webkit-file-upload-button {
+        display: none;
+    }
+    &::file-selector-button {
+        display: none;
+    }
+}
+
+.table td , .table th {
+    vertical-align: middle !important;
+}
+.table td img{
+    border-radius: 15px;
+}

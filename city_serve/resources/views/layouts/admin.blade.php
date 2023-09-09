@@ -36,14 +36,17 @@
                                 <a class="nav-link" href="{{route('view.admins')}}" style="margin-left: 20px;">Admins</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{route('view.users')}}" style="margin-left: 20px;">Users</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{route('view.cetegories')}}"
                                     style="margin-left: 20px;">Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="jobs-admins/show-jobs.html" style="margin-left: 20px;">opportunities</a>
+                                <a class="nav-link" href="{{route('view.tasks')}}" style="margin-left: 20px;">opportunities</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="applications-admins/show-apps.html"
+                                <a class="nav-link" href="{{route('view.applications')}}"
                                     style="margin-left: 20px;">Applications</a>
                             </li>
                         </ul>
