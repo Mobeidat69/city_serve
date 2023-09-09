@@ -7,10 +7,17 @@
             <div class="card">
                 <div class="card-body">
                     @if (\Session::has('create'))
-                        <div class="alert alert-success p-t-2">
-                            <p>{!! \Session::get('create') !!}</p>
-                        </div>
-                    @endif
+                    <div id="success-alert" class="alert alert-success">
+                        {!! \Session::get('create') !!}
+                    </div>
+                
+                    <script>
+                        setTimeout(function () {
+                            document.getElementById('success-alert').style.display = 'none';
+                        }, 5000);
+                    </script>
+                @endif
+                
                     <h5 class="card-title mb-4 d-inline">Categories</h5>
                     <a href="{{ route('create.category') }}" class="btn btn-primary mb-4 text-center float-right">Create
                         Categories</a>
@@ -28,8 +35,42 @@
                                 <tr>
                                     <th scope="row">{{ $category->id }}</th>
                                     <td>{{ $category->name }}</td>
-                                    <td><a href="{{ route('edit.category', $category->id) }}" class="btn btn-warning text-white text-center ">Update </a></td>
-                                    <td><a href="{{route('delete.category' , $category->id )}}" class="btn btn-danger  text-center ">Delete </a></td>
+                                    <td><a href="{{ route('edit.category', $category->id) }}"
+                                            class="btn btn-warning text-white text-center ">Update </a></td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger text-center" data-toggle="modal"
+                                            data-target="#confirmDelete{{ $category->id }}">Delete</a>
+                                        <div class="modal fade" id="confirmDelete{{ $category->id }}" tabindex="-1"
+                                            role="dialog" aria-labelledby="confirmDeleteLabel{{ $category->id }}"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="confirmDeleteLabel{{ $category->id }}">
+                                                            Confirm Delete</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Are you sure you want to delete ( {{ $category->name }} ) category?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <form action="{{ route('delete.category', $category->id) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+
                                 </tr>
                             @endforeach
                         </tbody>

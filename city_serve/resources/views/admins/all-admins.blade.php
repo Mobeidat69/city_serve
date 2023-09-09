@@ -10,9 +10,15 @@
                     <a href="{{ route('create.admin') }}" class="btn btn-primary mb-4 text-center float-right">Create
                         Admins</a>
                     @if (\Session::has('create'))
-                        <div class="alert alert-success p-t-2">
-                            <p>{!! \Session::get('create') !!}</p>
+                        <div id="success-alert" class="alert alert-success">
+                            {!! \Session::get('create') !!}
                         </div>
+
+                        <script>
+                            setTimeout(function() {
+                                document.getElementById('success-alert').style.display = 'none';
+                            }, 5000);
+                        </script>
                     @endif
                     <table class="table">
                         <thead>

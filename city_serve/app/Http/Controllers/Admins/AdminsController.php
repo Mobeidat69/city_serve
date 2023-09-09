@@ -45,7 +45,7 @@ class AdminsController extends Controller
     {
         Request()->validate([
             'name' => 'required|max:40',
-            'email' => 'required|max:255|unique:Admins ',
+            'email' => 'required|max:255|unique:Admins',
             'password' => 'required|max:32',
         ]);
         $createdAdmin = Admin::create([
@@ -94,7 +94,10 @@ class AdminsController extends Controller
 
         return redirect()->route('view.cetegories')->with('create', 'A category has been created');
     }
-    public function deleteCategory()
+    public function deleteCategory(Request $request)
     {
+        $category = Category::find($request->id);
+        $category->delete();
+        return redirect()->route('view.cetegories')->with('create' ,'A category has been deleted');
     }
 }

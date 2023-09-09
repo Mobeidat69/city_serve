@@ -55,6 +55,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     Route::get('/edit-category/{id}', [App\Http\Controllers\Admins\AdminsController::class, 'viewEditCategory'])->name('edit.category');
     Route::post('/edit-category/{id}', [App\Http\Controllers\Admins\AdminsController::class, 'updateCategory'])->name('update.category');
     
-    Route::post('/delete-category/{id}', [App\Http\Controllers\Admins\AdminsController::class, 'deleteCategory'])->name('delete.category');
+    Route::delete('/delete-category/{id}', [App\Http\Controllers\Admins\AdminsController::class, 'deleteCategory'])->name('delete.category');
     
 });
