@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admins\AdminsController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Jobs\JobsController;
-
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,8 +92,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
 
     Route::get('/applications', [AdminsController::class, 'viewApplications'])->name('view.applications');
     
-    Route::get('/confirm-applection/{id}', [AdminsController::class, 'confirmApplications'])->name('application.confirm');
+    Route::get('/confirm-application/{id}/{appId}', [MailController::class, 'confirmation'])->name('application.confirm');
 
-    Route::get('/applications/{id}', [AdminsController::class, 'rejectApplications'])->name('application.reject');
+    Route::get('/applications/{id}/{appId}', [MailController::class, 'reject'])->name('application.reject');
 
 });
+
+Route::get('sendmail', [MailController::class, 'index']);
+
