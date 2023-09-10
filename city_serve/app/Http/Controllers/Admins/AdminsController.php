@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Category\Category;
 use App\Models\Applications\Application;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Hash;
 
 class AdminsController extends Controller
@@ -264,7 +265,6 @@ class AdminsController extends Controller
         if ($createdTask) {
             return redirect()->route('view.tasks')->with('create', 'A Tasks has been updated');
         }
-
     }
     public function deleteTasks(Request $request)
     {
@@ -275,7 +275,19 @@ class AdminsController extends Controller
 
     public function viewApplications()
     {
-        $applications = Application::all();
-        return view("admins.applications" , compact('applications'));
+        $applications = Application::join('tasks', 'applications.task_id', '=', 'tasks.id')
+            ->join('users', 'applications.user_id', '=', 'users.id')
+            ->select(
+                'applications.id as application_id',
+                'applications.status as status',
+                'tasks.image as task_image',
+                'tasks.title as task_title',
+                'tasks.id as task_id',
+                'users.id as user_id',
+                'tasks.vacancy',
+                'applications.cv'
+            )
+            ->get();
+        return view("admins.applications", compact('applications'));
     }
 }

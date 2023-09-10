@@ -44,7 +44,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('view.tasks') }}"
-                                    style="margin-left: 20px;">opportunities</a>
+                                    style="margin-left: 20px;">Tasks</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('view.applications')}}"
