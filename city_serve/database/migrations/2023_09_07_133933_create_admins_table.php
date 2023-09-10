@@ -27,7 +27,6 @@ class CreateAdminsTable extends Migration
         $validator = \Illuminate\Support\Facades\Validator::make([], $rules);
 
         if ($validator->fails()) {
-            // Rollback the migration if validation fails
             Schema::dropIfExists('admins');
             throw new \Exception('Validation failed: ' . $validator->errors()->first());
         }

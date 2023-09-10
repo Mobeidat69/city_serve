@@ -16,7 +16,8 @@
     <div id="wrapper">
         <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">LOGO</a>
+                <a class="navbar-brand" href="#"> <img src="{{ asset('assets/images/logo.svg') }}"
+                        alt="logo"style="filter: invert(1);"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,22 +27,27 @@
                     @auth('admin')
                         <ul class="navbar-nav side-nav">
                             <li class="nav-item">
-                                <a class="nav-link text-white" style="margin-left: 20px;" href="index.html">Home
+                                <a class="nav-link text-white" style="margin-left: 20px;"
+                                    href="{{ route('admins.dashboard') }}">Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="admins/admins.html" style="margin-left: 20px;">Admins</a>
+                                <a class="nav-link" href="{{ route('view.admins') }}" style="margin-left: 20px;">Admins</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="categories-admins/show-categories.html"
+                                <a class="nav-link" href="{{ route('view.users') }}" style="margin-left: 20px;">Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('view.cetegories') }}"
                                     style="margin-left: 20px;">Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="jobs-admins/show-jobs.html" style="margin-left: 20px;">Jobs</a>
+                                <a class="nav-link" href="{{ route('view.tasks') }}"
+                                    style="margin-left: 20px;">opportunities</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="applications-admins/show-apps.html"
+                                <a class="nav-link" href="{{ route('view.applications')}}"
                                     style="margin-left: 20px;">Applications</a>
                             </li>
                         </ul>
@@ -49,7 +55,7 @@
                     <ul class="navbar-nav ml-md-auto d-md-flex">
                         @auth('admin')
                             <li class="nav-item">
-                                <a class="nav-link" href="home.blade.php">Home
+                                <a class="nav-link" href="{{ route('admins.dashboard') }}">Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
@@ -58,20 +64,21 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::guard('admin')->user()->email }}
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href=""
                                         onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
+                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 </div>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="admins/login-admins.html">login
+                                <a class="nav-link" href="{{ route('view.login') }}">login
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
