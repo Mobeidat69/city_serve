@@ -6,11 +6,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-7">
-          <h1 class="text-white font-weight-bold">{{ $name }}</h1>
+          <h1 class="text-white font-weight-bold">applications</h1>
           <div class="custom-breadcrumbs">
             <a href="#">Home</a> <span class="mx-2 slash">/</span>
             <a href="#">Job</a> <span class="mx-2 slash">/</span>
-            <span class="text-white"><strong>{{ $name }}</strong></span>
+            <span class="text-white"><strong>Saved Jobs</strong></span>
           </div>
         </div>
       </div>
@@ -21,16 +21,16 @@
         
       <div class="row mb-5 justify-content-center">
         <div class="col-md-7 text-center">
-          <h2 class="section-title mb-2">{{ $name }}</h2>
+          <h2 class="section-title mb-2">Saved Jobs</h2>
         </div>
       </div>
       <ul class="job-listings mb-5">
-@if ($jobs->count() > 0)
-@foreach ($jobs as $job)
+@if ($savedJobs->count() > 0)
+@foreach ($savedJobs as $job)
 <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
  <a href="{{route('single.job',$job->id) }}"></a>
  <div class="job-listing-logo">
-   <img src="{{asset('assets/images/'.$job->image.'')}}" alt="image" class="img-fluid">
+   <img src="{{asset('assets/images/'.$job->job_image.'')}}" alt="image" class="img-fluid">
  </div>
 
  <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -54,7 +54,7 @@
 @else
       <div class="container">
         <div class="alert alert-success">
-<p> No jobs avalabile yet </p>
+<p> No jobs saved yet </p>
         </div>
       </div>
       @endif
