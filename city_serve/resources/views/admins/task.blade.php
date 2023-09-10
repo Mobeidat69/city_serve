@@ -3,12 +3,10 @@
 
 @section('content')
 
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-6 ms-3">
-            <img src="{{ $task->image }}" alt="{{ $task->id }}-picture" style="max-width: 100%;">
+            <img class="rounded" src="{{ $task->image }}" alt="{{ $task->id }}-picture" style="max-width: 100%;">
 
             <div class="form-group">
                 <label for="title">Title:</label>
@@ -43,7 +41,6 @@
             <div class="form-group">
                 <label for="skills_required">Skills Required:</label>
                 <textarea class="form-control" id="description" disabled> {{ $task->skills_required }}</textarea>
-                {{-- <input type="text" class="form-control" id="skills_required" value="" disabled> --}}
             </div>
             <div class="form-group">
                 <label for="vacancy">Vacancy:</label>

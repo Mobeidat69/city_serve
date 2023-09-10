@@ -6,6 +6,8 @@ use App\Models\Category\Category;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Symfony\Component\Console\Application;
 
 class Task extends Model
 {
@@ -22,8 +24,12 @@ class Task extends Model
         'category',
         'image',
     ];
-    public function category(): BelongsTo {
+    public function application(): HasMany
+    {
+        return $this->hasMany(Application::class);
+    }
+    public function category(): BelongsTo
+    {
         return $this->belongsTo(Category::class);
     }
-    
 }

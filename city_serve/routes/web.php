@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admins\AdminsController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Jobs\JobsController;
-
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,10 +57,9 @@ Auth::routes();
 
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login')->middleware('CheckForAuth');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
-Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
 
+Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     Route::get('/', [AdminsController::class, 'index'])->name('admins.dashboard');
-    
     // ADMIN PAGE ROUTES
     Route::get('/admins', [AdminsController::class, 'admins'])->name('view.admins');
     Route::get('/create-admins', [AdminsController::class, 'createAdmins'])->name('create.admin');
@@ -98,5 +97,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     // END OF Tasks PAGE ROUTES
 
     Route::get('/applications', [AdminsController::class, 'viewApplications'])->name('view.applications');
+    
+    Route::get('/confirm-application/{id}/{appId}', [MailController::class, 'confirmation'])->name('application.confirm');
+
+    Route::get('/applications/{id}/{appId}', [MailController::class, 'reject'])->name('application.reject');
 
 });
+
+Route::get('sendmail', [MailController::class, 'index']);
+
