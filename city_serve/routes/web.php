@@ -18,30 +18,36 @@ use App\Http\Controllers\Jobs\JobsController;
 */
 
 
-// Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('app.blade.php');
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/admin', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
-// Route::get('admin', [AdminsController::class, 'index'])->name('admins.dashboard');
-// Route::group(['prefix' => 'admins', 'middleware' => 'auth:admin'], function () {
-    // Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.index');
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
-// Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
-// });
-Route::post('/jobs/save', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');
-Route::post('/jobs/apply', [App\Http\Controllers\Jobs\JobsController::class, 'jobApply'])->name('apply.job');
+Route::group(['prefix' => 'jobs'], function(){
+
+    Route::post('save', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');
+    Route::post('apply', [App\Http\Controllers\Jobs\JobsController::class, 'jobApply'])->name('apply.job');
+    Route::get('single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
+    
+});    
+
+Route::group(['prefix' => 'users'], function(){
+
+    Route::get('profile', [App\Http\Controllers\Users\UserController::class, 'profile'])->name('profile');
+    Route::get('applications', [App\Http\Controllers\Users\UserController::class, 'applications'])->name('applications');
+    Route::get('savedjobs', [App\Http\Controllers\Users\UserController::class, 'savedJobs'])->name('saved.jobs');
+    Route::get('edit-details', [App\Http\Controllers\Users\UserController::class, 'editDetails'])->name('edit.Details');
+    Route::post('edit-details', [App\Http\Controllers\Users\UserController::class, 'updateDetails'])->name('update.details');
+    Route::get('edit-cv', [App\Http\Controllers\Users\UserController::class, 'editCV'])->name('edit.cv');
+    Route::post('edit-cv', [App\Http\Controllers\Users\UserController::class, 'updateCV'])->name('update.cv');
+    Route::get('edit-image', [App\Http\Controllers\Users\UserController::class, 'editImage'])->name('edit.image');
+    Route::post('edit-image', [App\Http\Controllers\Users\UserController::class, 'updateImage'])->name('update.image');
+   
+});  
 Route::get('/categories/single/{name}',[App\Http\Controllers\Categories\CategoriesController::class,'singleCategory'])->name('categories.single');
-
-
 Auth::routes();
 // Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('home');
 
-Route::get('/jobs/single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
-Route::get('/users/profile', [App\Http\Controllers\Users\UserController::class, 'profile'])->name('profile');
-Route::get('/users/applications', [App\Http\Controllers\Users\UserController::class, 'applications'])->name('applications');
-Route::get('/users/savedjobs', [App\Http\Controllers\Users\UserController::class, 'savedJobs'])->name('saved.jobs');
-Route::get('/users/edit-details', [App\Http\Controllers\Users\UserController::class, 'editDetails'])->name('edit.Details');
-Route::post('/users/edit-details', [App\Http\Controllers\Users\UserController::class, 'updateDetails'])->name('update.details');
 
 
 
