@@ -10,10 +10,13 @@ use App\Models\Job\Job;
 
 class CategoriesController extends Controller
 {
-    public function singleCategory($name){
+public function singleCategory($name){
         $jobs =Job::where('category', $name)
         ->take(5)
-        ->orderby('created_at','desc');
-        return view('categories.single' ,compact('jobs'));
+        ->orderby('created_at','desc')
+        ->get();
+
+        
+        return view('categories.single' ,compact('jobs', 'name'));
     }
 }
