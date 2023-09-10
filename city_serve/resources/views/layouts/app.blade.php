@@ -45,10 +45,9 @@
 
                     <nav class="mx-auto site-navigation">
                         <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                            <li style="padding-left: 544px"><a href="home" class="nav-link active">Home</a></li>
+                            <li style="padding-left: 544px"><a href="{{route('home')}}" class="nav-link active">Home</a></li>
                             <li><a href="about.html">About</a></li>
 
-                            <li><a href="profile.html">Profile</a></li>
 
                             <li><a href="contact.html">Contact</a></li>
                             <li class="d-lg-none"><a href="post-job.html"><span class="mr-2">+</span> Post a Job</a>
@@ -68,12 +67,23 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="{{ route('profile') }}">
+                                      Profile
+                                  </a>
+                                  <a class="dropdown-item" href="{{ route('applications') }}">
+                                    Applications
+                                </a>
+                                <a class="dropdown-item" href="{{ route('saved.jobs') }}">
+                                  Saved Jobs
+                              </a>
+                              <a class="dropdown-item" href="{{ route('edit.Details') }}">
+                                Update Profile
+                            </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                             class="d-none">
                                             @csrf

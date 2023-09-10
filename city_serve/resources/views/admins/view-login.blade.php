@@ -10,11 +10,17 @@
                     <form method="POST" class="p-auto" action="{{ route('check.login') }}">
                         <!-- Email input -->
                         @csrf
+                        @if ($errors->has('email'))
+                            <p class="alert alert-danger ">{{ $errors->first('email') }}</p>
+                        @endif
                         <div class="form-outline mb-4">
                             <input type="email" name="email" id="form2Example1" class="form-control"
                                 placeholder="Email" />
                         </div>
                         <!-- Password input -->
+                        @if ($errors->has('password'))
+                            <p class="alert alert-danger ">{{ $errors->first('password') }}</p>
+                        @endif
                         <div class="form-outline mb-4">
                             <input type="password" name="password" id="form2Example2" placeholder="Password"
                                 class="form-control" />
