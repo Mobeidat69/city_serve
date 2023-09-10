@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admins\AdminsController;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\Jobs\JobsController;
 
 
 /*
@@ -18,19 +18,30 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-// Auth::routes();
-Route::get('/index.html', [App\Http\Controllers\HomeController::class, 'index'])->name('app.blade.php');
+// Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('app.blade.php');
+Auth::routes();
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/admin', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
+// Route::get('admin', [AdminsController::class, 'index'])->name('admins.dashboard');
+// Route::group(['prefix' => 'admins', 'middleware' => 'auth:admin'], function () {
+    // Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.index');
 
+// Route::get('/', [App\Http\Controllers\Admins\AdminsController::class, 'index'])->name('admins.dashboard');
+// });
+Route::post('/jobs/save', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');
+Route::post('/jobs/apply', [App\Http\Controllers\Jobs\JobsController::class, 'jobApply'])->name('apply.job');
+Route::get('/categories/single/{name}',[App\Http\Controllers\Categories\CategoriesController::class,'singleCategory'])->name('categories.single');
 
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Auth::routes();
 // Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('home');
 
 Route::get('/jobs/single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
+Route::get('/users/profile', [App\Http\Controllers\Users\UserController::class, 'profile'])->name('profile');
+Route::get('/users/applications', [App\Http\Controllers\Users\UserController::class, 'applications'])->name('applications');
+Route::get('/users/savedjobs', [App\Http\Controllers\Users\UserController::class, 'savedJobs'])->name('saved.jobs');
+Route::get('/users/edit-details', [App\Http\Controllers\Users\UserController::class, 'editDetails'])->name('edit.Details');
+Route::post('/users/edit-details', [App\Http\Controllers\Users\UserController::class, 'updateDetails'])->name('update.details');
 
 
 
@@ -38,7 +49,7 @@ Route::get('/jobs/single/{id}', [App\Http\Controllers\Jobs\JobsController::class
 // ADMIN DASHBOARD ROUTES
 
 
-Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login')->middleware('checkforauth');
+Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login')->middleware('CheckForAuth');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
