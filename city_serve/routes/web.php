@@ -14,7 +14,8 @@ use App\Http\Controllers\MailController;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
-|
+|        $this->middleware('auth');
+
 */
 
 
@@ -23,17 +24,14 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
-Route::group(['prefix' => 'jobs'], function(){
-
+Route::group(['prefix' => 'jobs' , 'middleware' =>'auth:web' ], function () {
     Route::post('save', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');
     Route::post('apply', [App\Http\Controllers\Jobs\JobsController::class, 'jobApply'])->name('apply.job');
     Route::get('single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
     Route::any('search', [App\Http\Controllers\Jobs\JobsController::class, 'search'])->name('search.job');
+});
 
-});    
-
-Route::group(['prefix' => 'users'], function(){
-
+Route::group(['prefix' => 'users' , 'middleware' =>'auth:web'], function () {
     Route::get('profile', [App\Http\Controllers\Users\UserController::class, 'profile'])->name('profile');
     Route::get('applications', [App\Http\Controllers\Users\UserController::class, 'applications'])->name('applications');
     Route::get('savedjobs', [App\Http\Controllers\Users\UserController::class, 'savedJobs'])->name('saved.jobs');
@@ -43,18 +41,17 @@ Route::group(['prefix' => 'users'], function(){
     Route::post('edit-cv', [App\Http\Controllers\Users\UserController::class, 'updateCV'])->name('update.cv');
     Route::get('edit-image', [App\Http\Controllers\Users\UserController::class, 'editImage'])->name('edit.image');
     Route::post('edit-image', [App\Http\Controllers\Users\UserController::class, 'updateImage'])->name('update.image');
-   
-});  
-Route::get('/categories/single/{name}',[App\Http\Controllers\Categories\CategoriesController::class,'singleCategory'])->name('categories.single');
+});
+Route::get('/categories/single/{name}', [App\Http\Controllers\Categories\CategoriesController::class, 'singleCategory'])->name('categories.single');
+
 Auth::routes();
-// Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('home');
+
 
 
 
 
 
 // ADMIN DASHBOARD ROUTES
-
 
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login')->middleware('CheckForAuth');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
@@ -98,12 +95,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     // END OF Tasks PAGE ROUTES
 
     Route::get('/applications', [AdminsController::class, 'viewApplications'])->name('view.applications');
-    
+
     Route::get('/confirm-application/{id}/{appId}', [MailController::class, 'confirmation'])->name('application.confirm');
 
     Route::get('/applications/{id}/{appId}', [MailController::class, 'reject'])->name('application.reject');
-
 });
-
-Route::get('sendmail', [MailController::class, 'index']);
-

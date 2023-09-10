@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Job\Job;
+use App\Models\Tasks\Task;
 
 class HomeController extends Controller
 {
@@ -14,7 +14,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -25,8 +24,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        $jobs = Job::select()->take(5)->orderby('id', 'desc')->get();
-        $totalJobs = Job::all()->count();
+        $jobs = Task::select()->take(5)->orderby('id', 'desc')->get();
+        $totalJobs = Task::all()->count();
 
 
         return view('home', compact('jobs', 'totalJobs'));
