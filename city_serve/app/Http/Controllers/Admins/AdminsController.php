@@ -278,4 +278,12 @@ class AdminsController extends Controller
         $applications = Application::all();
         return view("admins.applications" , compact('applications'));
     }
+    public function rejectApplications($id)
+    {
+        
+    }
+    public function confirmApplications()
+    {
+        return 1;
+    }
 }

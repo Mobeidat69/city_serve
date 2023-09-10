@@ -2,5 +2,6 @@
 
 
 @section('content')
-as
+{{$task->}}
+
 @endsection

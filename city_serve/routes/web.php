@@ -40,10 +40,9 @@ Route::get('/jobs/single/{id}', [App\Http\Controllers\Jobs\JobsController::class
 
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login')->middleware('checkforauth');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
-Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
 
+Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     Route::get('/', [AdminsController::class, 'index'])->name('admins.dashboard');
-    
     // ADMIN PAGE ROUTES
     Route::get('/admins', [AdminsController::class, 'admins'])->name('view.admins');
     Route::get('/create-admins', [AdminsController::class, 'createAdmins'])->name('create.admin');
@@ -81,5 +80,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     // END OF Tasks PAGE ROUTES
 
     Route::get('/applications', [AdminsController::class, 'viewApplications'])->name('view.applications');
+    
+    Route::get('/confirm-applection/{id}', [AdminsController::class, 'confirmApplications'])->name('application.confirm');
+
+    Route::get('/applications/{id}', [AdminsController::class, 'rejectApplications'])->name('application.reject');
 
 });

@@ -23,13 +23,24 @@
                             @foreach ($applications as $app)
                                 <tr>
                                     <th scope="row">{{ $app->job_id }}</th>
-                                    <td><img src="{{ $app->image }}" alt="{{ $app->id }}-picture" style="max-width: 200px"></td>
-                                    <td>{{$app->title}}</td>
-                                    <td>{{$app->vacancy}}</td>
-                                    <td><a class="btn btn-success" href="{{ assets($app->cv) }}">CV</a></td>
-                                    <td>
-                                      <a href="#" class="btn btn-success  text-center ">accept</a>
-                                      <a href="#" class="btn btn-danger  text-center ">reject</a>
+                                    <td><img src="{{ $app->image }}" alt="{{ $app->id }}-picture"
+                                            style="max-width: 200px"></td>
+                                    <td>{{ $app->title }}</td>
+                                    <td>{{ $app->vacancy }}</td>
+                                    <td><a class="btn btn-success" href="{{ asset($app->cv) }}">CV</a></td>
+                                    <td style="display: flex; gap:10px; ">
+                                        <div>
+                                            <form action="{{ route('application.confirm', $app->id) }}" method="get">
+                                                @csrf
+                                                <button type="submit" class="btn btn-success">accept</button>
+                                            </form>
+                                        </div>
+                                        <div>
+                                            <form action="{{ route('application.reject', $app->id) }}" method="get">
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger">reject</button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
