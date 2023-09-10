@@ -16,12 +16,9 @@
             </div>
         </div>
     </section>
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-
-
                 <form action="{{ route('login') }}" method="POST" class="m-5 p-4 border rounded">
                     @csrf
                     <div class="row form-group">
@@ -36,20 +33,12 @@
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                         </div>
                     </div>
-
                     <div class="row form-group">
                         <div class="col-md-12">
                             <input type="submit" name="submit" value="Log In" class="btn px-4 btn-primary text-white">
                         </div>
                     </div>
-
                 </form>
-
-
-               
-
-
-
             </div>
         </div>
     </div>

@@ -49,7 +49,7 @@
                     <ul class="navbar-nav ml-md-auto d-md-flex">
                         @auth('admin')
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home
+                                <a class="nav-link" href="home.blade.php">Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>

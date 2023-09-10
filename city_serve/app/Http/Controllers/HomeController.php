@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $jobs = Job::select()->take(5)->order('id','desc')->get();
+        $jobs = Job::select()->take(5)->orderby('id','desc')->get();
         $totalJobs = Job ::all()->count();
         
         
