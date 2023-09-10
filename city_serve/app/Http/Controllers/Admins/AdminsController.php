@@ -275,6 +275,7 @@ class AdminsController extends Controller
 
     public function viewApplications()
     {
-        return view("admins.applications");
+        $applications = Application::all();
+        return view("admins.applications" , compact('applications'));
     }
 }

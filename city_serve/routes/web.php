@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Auth::routes();
+// Auth::routes();
 Route::get('/index.html', [App\Http\Controllers\HomeController::class, 'index'])->name('app.blade.php');
 
 
