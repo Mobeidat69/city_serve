@@ -48,25 +48,38 @@
               <label for="job-title">Name</label>
               <input type="text" value="{{ $userDetails->name }}" name="name" class="form-control" id="job-title" placeholder="Name">
             </div>
-            <div class="form-group">
+            @if($errors->has('name'))
+            <p class="alert alert-success">{{$errors->first('name')}}</p>
+            @endif
+                        <div class="form-group">
                 <label for="job-title">Job Title</label>
                 <input type="text" name="job_title" value="{{$userDetails->job_title}}" class="form-control" id="job-title" placeholder="Job Title">
             </div>
-            
+            @if($errors->has('job_title'))
+            <p class="alert alert-success">{{$errors->first('job_title')}}</p>
+            @endif
             <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="">bio</label> 
                   <textarea name="bio" id="" value="{{$userDetails->bio}}" cols="30" rows="7" class="form-control" placeholder="Write bio..."></textarea>
                 </div>
+                @if($errors->has('bio'))
+            <p class="alert alert-success">{{$errors->first('bio')}}</p>
+            @endif
                 <div class="form-group">
                     <label for="job-title">Github</label>
                     <input type="text" name="github" value="{{$userDetails->github}}" class="form-control" id="job-title" placeholder="github">
                 </div>
+                @if($errors->has('github'))
+            <p class="alert alert-success">{{$errors->first('github')}}</p>
+            @endif
                 <div class="form-group">
                     <label for="job-title">linkedin</label>
                     <input type="text" name="linkedin" value="{{$userDetails->linkedin}}" class="form-control" id="job-title" placeholder="linkedin">
                 </div>
-                
+                @if($errors->has('linkedin'))
+            <p class="alert alert-success">{{$errors->first('linkedin')}}</p>
+            @endif
               </div>
               <div class="col-lg-4 ml-auto">
                 <div class="row">  
