@@ -46,11 +46,9 @@
          <span class="badge badge-danger"> {{$job->job_type}}</span>
        </div>
      </div>
-     
     </li>   
-    
-    @endforeach 
-    </ul>
+  </ul>
+  @endforeach 
     
     @else
           <div class="container">
@@ -62,7 +60,7 @@
           
           
           
-        </ul>
+      
         </div>
       </section>
     

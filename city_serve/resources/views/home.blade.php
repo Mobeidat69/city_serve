@@ -22,7 +22,7 @@
 </div> --}}
 
      <!-- HOME -->
-     <section class="home-section section-hero overlay bg-image"
+     <section class="home-section section-hero overlay bg-image "
          style="margin-top:-24px;background-image: url('{{ asset('assets/images/home-bg.svg') }}');" id="home-section">
 
          <div class="container">
@@ -45,21 +45,21 @@
                                  <select name="job_region"  class="selectpicker" data-style="btn-white btn-lg" data-width="100%"
                                      data-live-search="true" title="Select Region">
                                      <option>Anywhere</option>
-                                     <option>San Francisco</option>
-                                     <option>Palo Alto</option>
-                                     <option>New York</option>
-                                     <option>Manhattan</option>
-                                     <option>Ontario</option>
-                                     <option>Toronto</option>
-                                     <option>Kansas</option>
-                                     <option>Mountain View</option>
+                                     <option>Amman</option>
+                                     <option>Aqaba</option>
+                                     <option>Maan</option>
+                                     <option>Irbid</option>
+                                     <option>AlAzraq</option>
+                                     <option>Azzarqa</option>
+                                     <option>Karak</option>
+                                     <option>Ajloun</option>
                                  </select>
                              </div>
                              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                                  <select name="job_type" class="selectpicker" data-style="btn-white btn-lg" data-width="100%"
                                      data-live-search="true" title="Select Job Type">
-                                     <option>local</option>
-                                     <option>International</option>
+                                     <option>Environmental</option>
+                                     <option>Humanitarian</option>
                                  </select>
                              </div>
                              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">

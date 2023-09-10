@@ -2,8 +2,9 @@
 
 
 @section('content')
-<section class="section-hero overlay inner-page bg-image" style="background-image: url('{{asset('assets/images/hero_1.jpg')}}');margin-top:24px" id="home-section">
-    <div class="container">
+<section class="home-section section-hero overlay bg-image "
+style="margin-top:-24px;background-image: url('{{ asset('assets/images/home-bg.svg') }}');" id="home-section">
+<div class="container">
       <div class="row">
         <div class="col-md-7">
           <h1 class="text-white font-weight-bold">applications</h1>
