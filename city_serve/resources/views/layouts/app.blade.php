@@ -49,14 +49,8 @@
                             <li><a href="{{route('about')}}">About</a></li>
 
 
-<<<<<<< HEAD
                             <li><a href="{{route('contact')}}">Contact</a></li>
                             <li class="d-lg-none"><a href="post-job.html"><span class="mr-2">+</span> Post a Job</a></li>
-=======
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="d-lg-none"><a href="post-job.html"><span class="mr-2">+</span> Post a Job</a>
-                            </li>
->>>>>>> 5f165cf1dcaa628022cbe59d135a90a021402d51
                             @guest
                                 @if (Route::has('login'))
                                     <li><a href="{{ route('login') }}">Log In</a></li>
