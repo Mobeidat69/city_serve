@@ -49,7 +49,7 @@ Route::post('/users/edit-details', [App\Http\Controllers\Users\UserController::c
 // ADMIN DASHBOARD ROUTES
 
 
-Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login')->middleware('checkforauth');
+Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login')->middleware('CheckForAuth');
 Route::post('admin/login', [AdminsController::class, 'checkLogin'])->name('check.login');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
 
