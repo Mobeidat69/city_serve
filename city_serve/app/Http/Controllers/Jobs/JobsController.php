@@ -8,9 +8,7 @@ use App\Models\Job\Job;
 use App\Models\Job\JobSaved;
 use App\Models\Job\Application;
 use App\Models\Category\Category;
-
-
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class JobsController extends Controller
 {
