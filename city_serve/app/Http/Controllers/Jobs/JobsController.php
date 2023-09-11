@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Jobs;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Job\Job;
+use App\Models\Job\Tasks;
 use App\Models\Job\JobSaved;
 use App\Models\Job\Application;
 use App\Models\Category\Category;
@@ -15,15 +15,15 @@ class JobsController extends Controller
     public function single($id)
     {
 
-        $job = Job::find($id);
+        $job = Tasks::find($id);
 
         //getting related jobs
-        $relatedJobs = Job::where('category', $job->category)
+        $relatedJobs = Tasks::where('category', $job->category)
             ->where('id', '!=', $id)
             ->take(5)
             ->get();
 
-        $relatedJobsCount = Job::where('category', $job->category)
+        $relatedJobsCount = Tasks::where('category', $job->category)
             ->where('id', '!=', $id)
             ->take(5)
             ->count();

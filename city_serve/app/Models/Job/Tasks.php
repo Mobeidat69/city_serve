@@ -5,10 +5,10 @@ namespace App\Models\Job;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model
+class Tasks extends Model
 {
     use HasFactory;
-    protected $table='jobs';
+    protected $table='Tasks';
     protected $fillable=['id','job_title',
     'job_region',
     'company',
