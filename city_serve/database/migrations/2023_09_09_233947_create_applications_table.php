@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('task_title');
             $table->integer('task-region');
             $table->integer('task-category');
+            $table->tinyInteger('status');
             $table->integer('user_id');
             $table->integer('user_image')->nullable();
             $table->string('cv');
