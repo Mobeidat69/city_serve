@@ -31,19 +31,27 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <meta charset="utf-8">
+    <meta property="og:title" content="🌟 I just found an amazing volunteer opportunity on City Serve!">
+    <meta property="og:description" content="They're making a difference, and I'm excited to join in. Check it out and get involved! 🙌">
+    <meta property="og:image" content="URL_TO_YOUR_IMAGE">
+    <meta property="og:url" content="URL_TO_YOUR_POST">
+    <meta property="og:type" content="website">
+
+
 </head>
 
 <body>
     <div id="app">
 
         <!-- NAVBAR -->
-        <header class="site-navbar mt-3">
+        <header class="site-navbar mt-4">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="site-logo col-6"><a href="{{ url('/') }}"><img
                                 src="{{ asset('assets/images/Asset_4.svg') }}" style="filter: invert(1);"></a></div>
 
-                    <nav class="mx-auto site-navigation">
+                    <nav class="mx-auto site-navigation d-flex justify-content-around">
                         <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
                             <li style="padding-left: 544px"><a href="{{route('home')}}" class="nav-link active">Home</a></li>
                             <li><a href="{{route('about')}}">About</a></li>
@@ -74,9 +82,6 @@
                                     <a class="dropdown-item" href="{{ route('edit.cv') }}">
                                       Update CV
                                   </a>
-                                  <a class="dropdown-item" href="{{ route('edit.image') }}">
-                                    Update Image
-                                </a>
                                   <a class="dropdown-item" href="{{ route('applications') }}">
                                     Applications
                                 </a>
@@ -100,8 +105,15 @@
                     </nav>
 
                     <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-                        <div class="ml-auto">
-                        
+                        <div class="ml-auto ">
+                            <div class="site-mobile-menu site-navbar-target">
+                                <div class="site-mobile-menu-header">
+                                  <div class="site-mobile-menu-close  ">
+                                    <span class="icon-close2 js-menu-toggle d-none"></span>
+                                  </div>
+                                </div>
+                                <div class="site-mobile-menu-body"></div>
+                              </div> <!-- .site-mobile-menu -->
                         </div>
                         <a href="#"
                             class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
@@ -116,7 +128,7 @@
 
 
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
@@ -133,7 +145,7 @@
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <h3>Search Trending</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Apply for a volunteering opportunity</a></li>
+                        <li><a href="{{ route('login') }}">Apply for a volunteering opportunity</a></li>
 
                     </ul>
                 </div>

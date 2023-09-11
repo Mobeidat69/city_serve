@@ -20,7 +20,6 @@ use App\Http\Controllers\MailController;
 
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
@@ -28,9 +27,9 @@ Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])-
 Route::group(['prefix' => 'jobs' , 'middleware' =>'auth:web' ], function () {
     Route::post('save', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');
     Route::post('apply', [App\Http\Controllers\Jobs\JobsController::class, 'jobApply'])->name('apply.job');
-    Route::get('single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
-    Route::any('search', [App\Http\Controllers\Jobs\JobsController::class, 'search'])->name('search.job');
 });
+Route::get('jobs/single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
+Route::any('jobs/search', [App\Http\Controllers\Jobs\JobsController::class, 'search'])->name('search.job');
 
 Route::group(['prefix' => 'users' , 'middleware' =>'auth:web'], function () {
     Route::get('profile', [App\Http\Controllers\Users\UserController::class, 'profile'])->name('profile');
@@ -40,10 +39,9 @@ Route::group(['prefix' => 'users' , 'middleware' =>'auth:web'], function () {
     Route::post('edit-details', [App\Http\Controllers\Users\UserController::class, 'updateDetails'])->name('update.details');
     Route::get('edit-cv', [App\Http\Controllers\Users\UserController::class, 'editCV'])->name('edit.cv');
     Route::post('edit-cv', [App\Http\Controllers\Users\UserController::class, 'updateCV'])->name('update.cv');
-    Route::get('edit-image', [App\Http\Controllers\Users\UserController::class, 'editImage'])->name('edit.image');
     Route::post('edit-image', [App\Http\Controllers\Users\UserController::class, 'updateImage'])->name('update.image');
 });
-Route::get('/categories/single/{name}', [App\Http\Controllers\Categories\CategoriesController::class, 'singleCategory'])->name('categories.single');
+Route::get('/categories/single/{id}', [App\Http\Controllers\Categories\CategoriesController::class, 'singleCategory'])->name('categories.single');
 
 Auth::routes();
 

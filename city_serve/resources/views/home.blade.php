@@ -1,25 +1,6 @@
  @extends('layouts.app')
 
  @section('content')
-     {{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 
      <!-- HOME -->
      <section class="home-section section-hero overlay bg-image "
@@ -34,16 +15,16 @@
                              wide range of volunteer opportunities that match your interests and skills. Join our community
                              and start your journey towards making a positive impact."</p>
                      </div>
-                     <form method="post" action="{{ route('search.job')}}" class="search-jobs-form">
-                        @csrf 
-                        <div class="row mb-5">
+                     <form method="post" action="{{ route('search.job') }}" class="search-jobs-form">
+                         @csrf
+                         <div class="row mb-5">
                              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                 <input name="job_title" type="text" class="form-control form-control-lg"
-                                     placeholder="Job title">
+                                 <input name="title" type="text" class="form-control form-control-lg"
+                                     placeholder="title">
                              </div>
                              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                 <select name="job_region"  class="selectpicker" data-style="btn-white btn-lg" data-width="100%"
-                                     data-live-search="true" title="Select Region">
+                                 <select name="location" class="selectpicker" data-style="btn-white btn-lg"
+                                     data-width="100%" data-live-search="true" title="Select Region">
                                      <option>Anywhere</option>
                                      <option>Amman</option>
                                      <option>Aqaba</option>
@@ -56,14 +37,16 @@
                                  </select>
                              </div>
                              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                 <select name="job_type" class="selectpicker" data-style="btn-white btn-lg" data-width="100%"
-                                     data-live-search="true" title="Select Job Type">
-                                     <option>Environmental</option>
-                                     <option>Humanitarian</option>
+                                 <select name="category" class="selectpicker" data-style="btn-white btn-lg"
+                                     data-width="100%" data-live-search="true" title="Select Job Type">
+                                     @foreach ($categories as $category)
+                                         <option>{{ $category }}</option>
+                                     @endforeach
                                  </select>
                              </div>
                              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                 <button name="submit" type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span
+                                 <button name="submit" type="submit"
+                                     class="btn btn-primary btn-lg btn-block text-white btn-search"><span
                                          class="icon-search icon mr-2"></span>Search Job</button>
                              </div>
                          </div>
@@ -102,30 +85,30 @@
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="1930">0</strong>
+                         <strong class="number" data-number="{{$candidates}}">0</strong>
                      </div>
                      <span class="caption">Candidates</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="54">0</strong>
+                         <strong class="number" data-number="{{$tasks}}">0</strong>
                      </div>
                      <span class="caption">volunteering opportunities Posted</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="120">0</strong>
+                         <strong class="number" data-number="{{$appFilled}}">0</strong>
                      </div>
                      <span class="caption">volunteering opportunities Filled</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="550">0</strong>
+                         <strong class="number" data-number="{{$tasks > 4?$tasks -3:$tasks -1}}">0</strong>
                      </div>
-                     <span class="caption">Charites</span>
+                     <span class="caption">Events Done</span>
                  </div>
 
 
@@ -140,7 +123,7 @@
 
              <div class="row mb-5 justify-content-center">
                  <div class="col-md-7 text-center">
-                     <h2 class="section-title mb-2">{{ $totalJobs }} Job Listed</h2>
+                     <h2 class="section-title mb-2">{{ count($jobs) }} Job Listed</h2>
                  </div>
              </div>
 
@@ -149,20 +132,20 @@
                      <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
                          <a href="{{ route('single.job', $job->id) }}"></a>
                          <div class="job-listing-logo">
-                             <img src="{{ asset('assets/images/' . $job->image . '') }}"
+                             <img src="{{$job->image }}"
                                  alt="Free Website Template by Free-Template.co" class="img-fluid">
                          </div>
 
                          <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
                              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                                 <h2>{{ $job->job_title }}</h2>
-                                 <strong>{{ $job->company }}</strong>
+                                 <h2>{{ $job->title }}</h2>
+                                 <strong>{{ $job->category->name }}</strong>
                              </div>
                              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                                 <span class="icon-room"></span> {{ $job->job_region }}
+                                 <span class="icon-room"></span> {{ $job->location }}
                              </div>
                              <div class="job-listing-meta">
-                                 <span class="badge badge-danger"> {{ $job->job_type }}</span>
+                                 <span class="badge badge-danger"> {{ $job->vacancy }}</span>
                              </div>
                          </div>
 

@@ -2,21 +2,21 @@
 
 namespace App\Models\Job;
 
+use App\Models\Tasks\Task;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class JobSaved extends Model
 {
     use HasFactory;
+    public function task(){
+        return $this->HasMany(Task::class);
+    }
     protected $table='jobsaved';
     protected $fillable=['id',
-    'job_id',
+    'task_id',
     'user_id',
-    'job_image',
-    'job_title',
-    'job_region',
-    'company',
-    'job_type',
 ];
 
 public $timestamps = true;

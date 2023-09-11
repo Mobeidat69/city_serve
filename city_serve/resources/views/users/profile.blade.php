@@ -15,41 +15,26 @@
                                 </div>
                         </div>
                         @endif
-                        <div class="text-center">
-                            <img src="{{ $profile->image }}" width="100"
-                                class="rounded-circle">
+                        <div class="text-center d-flex justify-content-center">
+                            <div class="rounded-circle" style="width: 240px; height: 240px; overflow: hidden;">
+                                <img src="{{ $profile->image }}" width="100" height="100"
+                                    style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
                         </div>
+
 
                         <div class="text-center mt-3">
                             <!-- <span class="bg-secondary p-1 px-4 rounded text-white">Pro</span> -->
                             <h5 class="mt-2 mb-0">{{ $profile->name }}</h5>
-                            <span>{{ $profile->job_title }}</span>
-                            <a href="{{  $profile->cv  }}"
-                                class="btn btn-success btn-block text-white">Download Cv</a>
+                            <a href="{{ $profile->cv }}" class="btn btn-success btn-block text-white">Download Cv</a>
                             <div class="px-4 mt-1">
                                 <p class="fonts">{{ $profile->bio }}</p>
 
                             </div>
-
-                            <div class="px-3">
-                                <a href="{{ $profile->github }}" class="pt-3 pb-3 pr-3 pl-0 underline-none"><span
-                                        class="icon-facebook"></span></a>
-                                <a href="{{ $profile->linkedin }}" class="pt-3 pb-3 pr-3 pl-0"><span
-                                        class="icon-twitter"></span></a>
-                            </div>
-
-
-
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
-
-
         </div>
     </section>
 @endsection

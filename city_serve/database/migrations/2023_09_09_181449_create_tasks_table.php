@@ -21,6 +21,7 @@ return new class extends Migration
             $table->dateTime('deadline');
             $table->string('skills_required')->nullable();
             $table->integer('vacancy');
+            $table->string('company');
             $table->integer('category_id');
             $table->string('image');
             $table->string('status')->default('open');
