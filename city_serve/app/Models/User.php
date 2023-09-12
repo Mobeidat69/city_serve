@@ -28,10 +28,7 @@ class User extends Authenticatable
         'password',
         'image',
         'cv',
-        'job_title',
         'bio',
-        'linkedin',
-        'github'
     ];
 
     /**

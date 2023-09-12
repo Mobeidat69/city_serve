@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->integer('task_id');
-            $table->integer('task_title');
-            $table->integer('task-region');
-            $table->integer('task-category');
-            $table->tinyInteger('status');
             $table->integer('user_id');
-            $table->integer('user_image')->nullable();
+            $table->integer('task_id');
+            $table->tinyInteger('status');
             $table->string('cv');
 
             $table->timestamps();
