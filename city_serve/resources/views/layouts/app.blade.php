@@ -51,7 +51,7 @@
                     <div class="site-logo col-6"><a href="{{ url('/') }}"><img
                                 src="{{ asset('assets/images/Asset_4.svg') }}" style="filter: invert(1);"></a></div>
 
-                    <nav class="mx-auto site-navigation">
+                    <nav class="mx-auto site-navigation d-flex justify-content-around">
                         <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
                             <li style="padding-left: 544px"><a href="{{route('home')}}" class="nav-link active">Home</a></li>
                             <li><a href="{{route('about')}}">About</a></li>
@@ -82,9 +82,6 @@
                                     <a class="dropdown-item" href="{{ route('edit.cv') }}">
                                       Update CV
                                   </a>
-                                  <a class="dropdown-item" href="{{ route('edit.image') }}">
-                                    Update Image
-                                </a>
                                   <a class="dropdown-item" href="{{ route('applications') }}">
                                     Applications
                                 </a>

@@ -14,11 +14,14 @@ class Application extends Model
     use HasFactory;
     protected $fillable = [
         'status',
+        'task_id',
+        'user_id',
+        'cv',
     ];
     public function user(): BelongsTo{
         return $this->belongsTo(User::class);
     }
     public function task(): BelongsTo{
-        return $this->belongsTo(Task::class);
+        return $this->belongsTo(Task::class , 'task_id');
     }
 }

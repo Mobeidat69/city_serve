@@ -13,18 +13,8 @@ return new class extends Migration
     {
        Schema::create('jobsaved', function (Blueprint $table) {
             $table->bigIncrements('id');
-            // $table->foreign('job_id')->references('id')->on('jobs');
-            // $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('job_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('job_image');
-            $table->string('category');
-            $table->string('job_title');
-            $table->string('job_region');
-            $table->string('company');
-            $table->string('job_type');
-            
-       
             
             $table->timestamps();
         });

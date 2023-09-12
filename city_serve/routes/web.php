@@ -39,10 +39,9 @@ Route::group(['prefix' => 'users' , 'middleware' =>'auth:web'], function () {
     Route::post('edit-details', [App\Http\Controllers\Users\UserController::class, 'updateDetails'])->name('update.details');
     Route::get('edit-cv', [App\Http\Controllers\Users\UserController::class, 'editCV'])->name('edit.cv');
     Route::post('edit-cv', [App\Http\Controllers\Users\UserController::class, 'updateCV'])->name('update.cv');
-    Route::get('edit-image', [App\Http\Controllers\Users\UserController::class, 'editImage'])->name('edit.image');
     Route::post('edit-image', [App\Http\Controllers\Users\UserController::class, 'updateImage'])->name('update.image');
 });
-Route::get('/categories/single/{name}', [App\Http\Controllers\Categories\CategoriesController::class, 'singleCategory'])->name('categories.single');
+Route::get('/categories/single/{id}', [App\Http\Controllers\Categories\CategoriesController::class, 'singleCategory'])->name('categories.single');
 
 Auth::routes();
 

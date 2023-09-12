@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Applications\Application;
+use App\Models\Category\Category;
 use Illuminate\Http\Request;
 use App\Models\Tasks\Task;
 
@@ -23,24 +25,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $jobs = Task::select()->take(5)->orderby('id', 'desc')->get();
-        $totalJobs = Task::all()->count();
-
-
-        return view('home', compact('jobs', 'totalJobs'));
+        $jobs = Task::select('tasks.*')
+            ->join('categories', 'tasks.category_id', '=', 'categories.id')
+            ->take(5)
+            ->orderBy('tasks.id', 'desc')
+            ->get();
+        $categories = Category::pluck('name');
+        $candidates = Application::where('status', 1)->count();
+        $appFilled = Application::get()->count();
+        $tasks = Task::get()->count();
+        return view('home', compact('appFilled', 'jobs', 'categories', 'candidates', 'tasks'));
     }
     public function about()
     {
-
-        
-
         return view('pages.about');
     }
     public function contact()
     {
-
-
         return view('pages.contact');
     }
 }
