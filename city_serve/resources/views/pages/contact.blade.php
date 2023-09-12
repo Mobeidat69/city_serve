@@ -1,12 +1,17 @@
 @extends('layouts.app')
 
  @section('content')
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
+ <section class="section-hero overlay inner-page bg-image" style="background-image: url('{{asset('assets/images/home-bg.svg')}}')" id="home-section">
+  <div class="container">
+    <div class="row mr-5">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="row">
+  <h2 class="text-left mb-4" style="font-size: 32px; color:white">Contact Us</h2>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
  <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
