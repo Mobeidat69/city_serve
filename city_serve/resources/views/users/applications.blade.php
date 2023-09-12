@@ -2,21 +2,22 @@
 
 
 @section('content')
-<section class="home-section section-hero overlay bg-image "
-style="margin-top:-24px;background-image: url('{{ asset('assets/images/home-bg.svg') }}');" id="home-section">
-<div class="container">
-      <div class="row">
-        <div class="col-md-7">
-          <h1 class="text-white font-weight-bold">applications</h1>
-          <div class="custom-breadcrumbs">
-            <a href="#">Home</a> <span class="mx-2 slash">/</span>
-            <a href="#">Job</a> <span class="mx-2 slash">/</span>
-            <span class="text-white"><strong>Applications</strong></span>
-          </div>
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('{{asset('assets/images/home-bg.svg')}}');" id="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="text-white font-weight-bold">Applications</h1>
+        <div class="custom-breadcrumbs">
+          <a href="#">Home</a> <span class="mx-2 slash">/</span>
+          <a href="#">Job</a> <span class="mx-2 slash">/</span>
+          <span class="text-white"><strong>Saved Jobs</strong></span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<div class="container">
+      
 <section class="site-section">
     <div class="container">
         

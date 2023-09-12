@@ -2,11 +2,11 @@
 
 
 @section('content')
-<section class="section-hero overlay inner-page bg-image" style="background-image: url('{{asset('assets/images/hero_1.jpg')}}');" id="home-section">
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('{{asset('assets/images/home-bg.svg')}}');" id="home-section">
     <div class="container">
       <div class="row">
         <div class="col-md-7">
-          <h1 class="text-white font-weight-bold">applications</h1>
+          <h1 class="text-white font-weight-bold">Saved Jobs</h1>
           <div class="custom-breadcrumbs">
             <a href="#">Home</a> <span class="mx-2 slash">/</span>
             <a href="#">Job</a> <span class="mx-2 slash">/</span>
@@ -21,7 +21,7 @@
         
       <div class="row mb-5 justify-content-center">
         <div class="col-md-7 text-center">
-          <h2 class="section-title mb-2">Saved Jobs</h2>
+          <h2 class="section-title mb-2"></h2>
         </div>
       </div>
       <ul class="job-listings mb-5">
