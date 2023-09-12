@@ -13,7 +13,7 @@ return new class extends Migration
     {
        Schema::create('jobsaved', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('job_id');
+            $table->unsignedBigInteger('task_id');
             $table->unsignedBigInteger('user_id');
             
             $table->timestamps();

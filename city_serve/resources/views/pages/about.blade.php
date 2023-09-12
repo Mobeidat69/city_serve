@@ -17,7 +17,7 @@
       <div class="col-lg-8 offset-lg-2">
         <div class="row">
           <div class="col-lg-6">
-            <h2 class="text-left mb-4" style="font-size: 32px;">About Us</h2>
+            <h2 class="text-left mb-4" style="font-size: 32px;"></h2>
             <p style="font-size: 20px;">Welcome to City Serve, where volunteering makes a difference! We are a community of passionate volunteers dedicated to creating positive change.</p>
           </div>
           <div class="col-lg-6">
