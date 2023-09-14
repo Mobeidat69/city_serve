@@ -25,10 +25,10 @@
                     <h2 class="section-title mb-2">Applications</h2>
                 </div>
             </div>
-            <ul class="job-listings mb-5">
+            <ul class="job-listings mb-5 list-unstyled">
                 @if ($applications->count() > 0)
                     @foreach ($applications as $job)
-                        <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                        <li class="job-listing d-block d-sm-flex mb-5 pb-sm-0 align-items-center  shadow  bg-white rounded">
                             <a href="{{ route('single.job', $job->task->id) }}"></a>
                             <div class="job-listing-logo">
                                 <img src="{{ $job->task->image }}" alt="ask-image" class="img-fluid">

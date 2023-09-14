@@ -12,7 +12,7 @@
   </div>
   </div>
 </section>
- <div class="container">
+ <div class="container mt-5">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <h2 class="text-center mb-4" style="font-size: 40px;">Contact Us</h2>

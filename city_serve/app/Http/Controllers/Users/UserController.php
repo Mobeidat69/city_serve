@@ -25,6 +25,7 @@ class UserController extends Controller
 
         $applications = Application::where('user_id', Auth::user()->id)
             ->with('task', 'user', 'task.category')
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return view('users.applications', compact('applications'));

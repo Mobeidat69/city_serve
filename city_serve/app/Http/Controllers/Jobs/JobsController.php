@@ -58,7 +58,7 @@ class JobsController extends Controller
         if ($request->cv == 'No cv' || $request->cv == null) {
             return redirect('/jobs/single/' . $request->job_id)->with('apply', 'upload your cv in your profile first!');
         } else {
-            $jd = $request->job_id;
+            $jd = $request->task_id;
             $applyJob = Application::create([
                 'cv' => Auth::user()->cv,
                 'task_id' => $jd,
@@ -66,7 +66,7 @@ class JobsController extends Controller
             ]);
             Task::find($request->task_id)->decrement('vacancy', 1);
             if ($applyJob) {
-                return redirect('/jobs/single/' . $request->job_id . '')->with('applied', 'you have applied to this Oppertuinity!');
+                return redirect('/jobs/single/' . $request->task_id . '')->with('applied', 'you have applied to this Oppertuinity!');
             }
         }
     }
