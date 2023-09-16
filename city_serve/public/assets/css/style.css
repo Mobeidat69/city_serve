@@ -6,6 +6,9 @@
     width: 100%;
     top: 2rem;
 }
+a{
+    text-decoration: none !important;
+}
 .site-navbar .container-fluid {
     padding-left: 7rem;
     padding-right: 7rem;
@@ -2164,6 +2167,7 @@ h4 {
     transform: translate(-50%, -50%);
 }
 
-/* #app-logo img{
-    width: 170px;
-} */
+.category-img {
+    height: 200px; /* Adjust this to your desired height */
+    object-fit: cover; /* This ensures the image covers the defined height */
+}
