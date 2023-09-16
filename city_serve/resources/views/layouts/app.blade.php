@@ -8,9 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>City Serve</title>
 
     <!-- Fonts -->
+    <link rel="icon" href="{{ asset('assets/images/Asset 3.svg') }}">
+
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
@@ -33,10 +35,12 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <meta charset="utf-8">
     <meta property="og:title" content="🌟 I just found an amazing volunteer opportunity on City Serve!">
-    <meta property="og:description" content="They're making a difference, and I'm excited to join in. Check it out and get involved! 🙌">
+    <meta property="og:description"
+        content="They're making a difference, and I'm excited to join in. Check it out and get involved! 🙌">
     <meta property="og:image" content="URL_TO_YOUR_IMAGE">
     <meta property="og:url" content="URL_TO_YOUR_POST">
     <meta property="og:type" content="website">
+
 
 
 </head>
@@ -53,11 +57,12 @@
 
                     <nav class="mx-auto site-navigation d-flex justify-content-around">
                         <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                            <li style="padding-left: 544px"><a href="{{route('home')}}" class="nav-link active">Home</a></li>
-                            <li><a href="{{route('about')}}">About</a></li>
+                            <li style="padding-left: 544px"><a href="{{ route('home') }}"
+                                    class="nav-link active">Home</a></li>
+                            <li><a href="{{ route('about') }}">About</a></li>
 
 
-                            <li><a href="{{route('contact')}}">Contact</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
                             @guest
                                 @if (Route::has('login'))
                                     <li><a href="{{ route('login') }}">Log In</a></li>
@@ -73,21 +78,21 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="{{ route('profile') }}">
-                                      Profile
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('edit.Details') }}">
-                                      Update Profile
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('edit.cv') }}">
-                                      Update CV
-                                  </a>
-                                  <a class="dropdown-item" href="{{ route('applications') }}">
-                                    Applications
-                                </a>
-                                <a class="dropdown-item" href="{{ route('saved.jobs') }}">
-                                  Saved Jobs
-                              </a>
+                                        <a class="dropdown-item" href="{{ route('profile') }}">
+                                            Profile
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('edit.Details') }}">
+                                            Update Profile
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('edit.cv') }}">
+                                            Update CV
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('applications') }}">
+                                            Applications
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('saved.jobs') }}">
+                                            Saved Jobs
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -108,12 +113,12 @@
                         <div class="ml-auto ">
                             <div class="site-mobile-menu site-navbar-target">
                                 <div class="site-mobile-menu-header">
-                                  <div class="site-mobile-menu-close  ">
-                                    <span class="icon-close2 js-menu-toggle d-none"></span>
-                                  </div>
+                                    <div class="site-mobile-menu-close  ">
+                                        <span class="icon-close2 js-menu-toggle d-none"></span>
+                                    </div>
                                 </div>
                                 <div class="site-mobile-menu-body"></div>
-                              </div> <!-- .site-mobile-menu -->
+                            </div> <!-- .site-mobile-menu -->
                         </div>
                         <a href="#"
                             class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
@@ -152,22 +157,21 @@
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <h3>Company</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Resources</a></li>
+                        <li><a href="{{ route('about') }}">About Us</a></li>
+                        <li><a href="{{ route('about') }}">Contact Us</a></li>
+                        {{-- <li><a href="#">Blog</a></li> --}}
                     </ul>
                 </div>
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <h3>Support</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="{{ route('support') }}">Support</a></li>
+                        <li><a href="{{ route('privacy') }}">Privacy</a></li>
+                        <li><a href="{{ route('terms') }}">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
-                    <h3>Contact Us</h3>
+                    <h3>Follow Us</h3>
                     <div class="footer-social">
                         <a href="#"><span class="icon-facebook"></span></a>
                         <a href="#"><span class="icon-twitter"></span></a>

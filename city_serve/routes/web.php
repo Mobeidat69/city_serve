@@ -23,6 +23,15 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/support', function(){
+    return view('pages.support');
+})->name('support');
+Route::get('/privacy', function(){
+    return view('pages.privacy');
+})->name('privacy');
+Route::get('/terms', function(){
+    return view('pages.terms');
+})->name('terms');
 
 Route::group(['prefix' => 'jobs' , 'middleware' =>'auth:web' ], function () {
     Route::post('save', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');

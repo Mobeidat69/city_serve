@@ -1,7 +1,6 @@
  @extends('layouts.app')
 
  @section('content')
-
      <!-- HOME -->
      <section class="home-section section-hero overlay bg-image "
          style="margin-top:-24px;background-image: url('{{ asset('assets/images/home-bg.svg') }}');" id="home-section">
@@ -85,28 +84,28 @@
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="{{$candidates}}">0</strong>
+                         <strong class="number" data-number="{{ $candidates }}">0</strong>
                      </div>
                      <span class="caption">Candidates</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="{{$tasks}}">0</strong>
+                         <strong class="number" data-number="{{ $tasks }}">0</strong>
                      </div>
                      <span class="caption">volunteering opportunities Posted</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="{{$appFilled}}">0</strong>
+                         <strong class="number" data-number="{{ $appFilled }}">0</strong>
                      </div>
                      <span class="caption">volunteering opportunities Filled</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="{{$tasks > 4?$tasks -3:$tasks -1}}">0</strong>
+                         <strong class="number" data-number="{{ $tasks > 4 ? $tasks - 3 : $tasks - 1 }}">0</strong>
                      </div>
                      <span class="caption">Events Done</span>
                  </div>
@@ -132,8 +131,8 @@
                      <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
                          <a href="{{ route('single.job', $job->id) }}"></a>
                          <div class="job-listing-logo">
-                             <img src="{{$job->image }}"
-                                 alt="Free Website Template by Free-Template.co" class="img-fluid">
+                             <img src="{{ $job->image }}" alt="Free Website Template by Free-Template.co"
+                                 class="img-fluid">
                          </div>
 
                          <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -169,7 +168,11 @@
                          volunteer experience.</p>
                  </div>
                  <div class="col-md-3 ml-auto">
-                     <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
+                     @auth
+                         <a href="#" class="btn btn-warning btn-block btn-lg">Explore Opportunities</a>
+                     @else
+                         <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
+                     @endauth
                  </div>
              </div>
          </div>
@@ -280,52 +283,4 @@
          </div>
 
      </section>
-
-
-     {{-- <section class="mb-n4 pt-5 bg-image overlay-primary fixed overlay"
-         style="background-image: url('images/hero_1.jpg'); margin-bottom:-24;">
-         <div class="container">
-             <div class="row">
-                 <div class="col-md-6 align-self-center text-center text-md-left mb-5 mb-md-0">
-                     <h2 class="text-white">Get The Mobile Apps</h2>
-                     <p class="mb-5 lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora
-                         adipisci impedit.</p>
-                     <p class="mb-0">
-                         <a href="#" class="btn btn-dark btn-md px-4 border-width-2 mr-3"><span
-                                 class="icon-apple mr-3"></span>App Store</a>
-                         <a href="#" class="btn btn-dark btn-md px-4 border-width-2 ml-3"><span
-                                 class="icon-android mr-3"></span>Play Store</a>
-                     </p>
-                 </div>
-                 <div class="col-md-6 ml-auto align-self-end">
-                     <img src="{{ asset('assets/images/apps.png') }}" alt="Free Website Template by Free-Template.co"
-                         class="img-fluid">
-                 </div>
-             </div>
-         </div>
-     </section> --}}
-
-
-     {{-- <section class="mb-n4 pt-5 bg-image overlay-primary fixed overlay"
-         style="background-image: url('images/hero_1.jpg'); margin-bottom:-24;">
-         <div class="container">
-             <div class="row">
-                 <div class="col-md-6 align-self-center text-center text-md-left mb-5 mb-md-0">
-                     <h2 class="text-white">Get The Mobile Apps</h2>
-                     <p class="mb-5 lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora
-                         adipisci impedit.</p>
-                     <p class="mb-0">
-                         <a href="#" class="btn btn-dark btn-md px-4 border-width-2"><span
-                                 class="icon-apple mr-3"></span>App Store</a>
-                         <a href="#" class="btn btn-dark btn-md px-4 border-width-2"><span
-                                 class="icon-android mr-3"></span>Play Store</a>
-                     </p>
-                 </div>
-                 <div class="col-md-6 ml-auto align-self-end">
-                     <img src="{{ asset('assets/images/apps.png') }}" alt="Free Website Template by Free-Template.co"
-                         class="img-fluid">
-                 </div>
-             </div>
-         </div>
-     </section> --}}
  @endsection

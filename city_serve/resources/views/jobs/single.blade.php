@@ -3,7 +3,7 @@
     {{-- huda --}}
     <!-- HOME -->
     <section class="section-hero overlay inner-page bg-image"
-        style="background-image: url('{{ asset('assets/images/hero_1.jpg') }}')" id="home-section">
+        style="background-image: url('{{ asset('assets/images/home-bg.svg') }}')" id="home-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -120,7 +120,7 @@
                             <div class="col-6">
                                 <form action="{{ route('apply.job') }}" method="POST">
                                     @csrf
-                                    <input name="job_id" type="hidden" value="{{ $job->id }}">
+                                    <input name="task_id" type="hidden" value="{{ $job->id }}">
                                     <input name="cv" type="hidden" value="{{ Auth::user()->cv }}">
                                     @if ($appliedJob > 0)
                                         <button type="submit" name="submit" class="btn btn-block btn-primary btn-md"
