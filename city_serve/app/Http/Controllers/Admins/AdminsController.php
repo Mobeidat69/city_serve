@@ -192,7 +192,7 @@ class AdminsController extends Controller
             'location' => 'required|max:255',
             'start_date' => 'required|date|after_or_equal:today',
             'end_date' => 'required|after:start_date',
-            'deadline' => 'required|after:start_date',
+            'deadline' => 'required|before:start_date',
             'vacancy' => 'required',
             'category' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',
@@ -238,7 +238,7 @@ class AdminsController extends Controller
             'location' => 'required|max:255',
             'start_date' => 'required|date|after_or_equal:today',
             'end_date' => 'required|after:start_date',
-            'deadline' => 'required|after:start_date',
+            'deadline' => 'required|before:start_date',
             'vacancy' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
