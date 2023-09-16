@@ -170,10 +170,10 @@
                  </div>
                  <div class="col-md-3 ml-auto">
                     @auth
-                    <a href="#" class="btn btn-warning btn-block btn-lg">Explore Opportunities</a>
-                        
-                    @endif
+                    <a href="#" class="btn btn-warning btn-block btn-lg">Explore Opportunities</a>   
+                    @else
                      <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
+                     @endauth
                  </div>
              </div>
          </div>
