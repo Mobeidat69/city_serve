@@ -36,10 +36,13 @@ class HomeController extends Controller
         $tasks = Task::get()->count();
         return view('home', compact('appFilled', 'jobs', 'categories', 'candidates', 'tasks'));
     }
+
     public function about()
     {
         return view('pages.about');
     }
+
+
     public function contact()
     {
         return view('pages.contact');
