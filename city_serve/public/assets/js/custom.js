@@ -188,7 +188,7 @@ jQuery(function ($) {
                 e.preventDefault();
 
                 var hash = this.hash;
-
+                console.log('Hash:', hash);
                 $("html, body").animate(
                     {
                         scrollTop: $(hash).offset().top,

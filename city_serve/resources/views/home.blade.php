@@ -1,7 +1,6 @@
  @extends('layouts.app')
 
  @section('content')
-
      <!-- HOME -->
      <section class="home-section section-hero overlay bg-image "
          style="margin-top:-24px;background-image: url('{{ asset('assets/images/home-bg.svg') }}');" id="home-section">
@@ -85,28 +84,28 @@
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="{{$candidates}}">0</strong>
+                         <strong class="number" data-number="{{ $candidates }}">0</strong>
                      </div>
                      <span class="caption">Candidates</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="{{$tasks}}">0</strong>
+                         <strong class="number" data-number="{{ $tasks }}">0</strong>
                      </div>
                      <span class="caption">volunteering opportunities Posted</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="{{$appFilled}}">0</strong>
+                         <strong class="number" data-number="{{ $appFilled }}">0</strong>
                      </div>
                      <span class="caption">volunteering opportunities Filled</span>
                  </div>
 
                  <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
                      <div class="d-flex align-items-center justify-content-center mb-2">
-                         <strong class="number" data-number="{{$tasks > 4?$tasks -3:$tasks -1}}">0</strong>
+                         <strong class="number" data-number="{{ $tasks > 4 ? $tasks - 3 : $tasks - 1 }}">0</strong>
                      </div>
                      <span class="caption">Events Done</span>
                  </div>
@@ -120,20 +119,18 @@
 
      <section class="site-section">
          <div class="container">
-
              <div class="row mb-5 justify-content-center">
                  <div class="col-md-7 text-center">
-                     <h2 class="section-title mb-2">{{ count($jobs) }} Job Listed</h2>
+                     <h2 class="section-title mb-2">Most Recent Opportunities</h2>
                  </div>
              </div>
-
              <ul class="job-listings mb-5">
                  @foreach ($jobs as $job)
                      <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
                          <a href="{{ route('single.job', $job->id) }}"></a>
                          <div class="job-listing-logo">
-                             <img src="{{$job->image }}"
-                                 alt="Free Website Template by Free-Template.co" class="img-fluid">
+                             <img src="{{ $job->image }}" alt="Free Website Template by Free-Template.co"
+                                 class="img-fluid">
                          </div>
 
                          <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
@@ -153,9 +150,9 @@
                  @endforeach
 
              </ul>
-
-
-
+             <div class="text-center">
+                 <a href="{{ route('categories') }}" class="btn btn-primary btn-lg text-white">Show More</a>
+             </div>
          </div>
      </section>
 
@@ -169,10 +166,11 @@
                          volunteer experience.</p>
                  </div>
                  <div class="col-md-3 ml-auto">
-                    @auth
-                    <a href="#" class="btn btn-warning btn-block btn-lg">Explore Opportunities</a>   
-                    @else
-                     <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
+                     @auth
+                         <a href="{{ route('categories') }}" class="btn btn-warning btn-block btn-lg">Explore
+                             Opportunities</a>
+                     @else
+                         <a href="{{ route('login') }}" class="btn btn-warning btn-block btn-lg">Sign Up</a>
                      @endauth
                  </div>
              </div>
@@ -188,7 +186,7 @@
                      <div class="row justify-content-center">
                          <div class="col-md-11">
                              <h2 class="section-title mb-2">Our Valued Partners</h2>
-                             <p class="lead">At City_Serve, we take pride in our strong partnerships with non-profit
+                             <p class="lead">At City Serve, we take pride in our strong partnerships with non-profit
                                  organizations dedicated to making a positive impact in our communities. Together with our
                                  valued partners, we connect passionate volunteers with meaningful opportunities to support
                                  various causes and initiatives. Our collaboration with these organizations allows us to
@@ -284,5 +282,4 @@
          </div>
 
      </section>
-
  @endsection
