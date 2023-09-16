@@ -27,23 +27,24 @@
             </div>
             <ul class="job-listings mb-5 list-unstyled">
                 @if ($applications->count() > 0)
-                    @foreach ($applications as $job)
-                        <li class="job-listing d-block d-sm-flex mb-5 pb-sm-0 align-items-center  shadow  bg-white rounded">
-                            <a href="{{ route('single.job', $job->task->id) }}"></a>
+                    @foreach ($applications as $application)
+                        <li class="job-listing d-block d-sm-flex mb-2 align-items-center bg-white rounded"
+                            style="height: 150px;">
+                            <a href="{{ route('single.job', $application->task->id) }}"></a>
                             <div class="job-listing-logo">
-                                <img src="{{ $job->task->image }}" alt="ask-image" class="img-fluid">
+                                <img src="{{ $application->task->image }}" alt="ask-image" class="img-fluid"
+                                    style="height: 100%; object-fit: cover;">
                             </div>
 
                             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
                                 <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                                    <h2>{{ $job->task->title }}</h2>
-                                    <strong>{{ $job->task->company }}</strong>
+                                    <h2>{{ $application->task->title }}</h2>
+                                    <strong>{{ $application->task->company }}</strong>
                                 </div>
                                 <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                                    <span class="icon-room"></span> {{ $job->task->location }}
+                                    <span class="icon-room"></span> {{ $application->task->location }}
                                 </div>
                             </div>
-
                         </li>
                     @endforeach
             </ul>
@@ -63,3 +64,6 @@
 
 
 @endsection
+
+
+

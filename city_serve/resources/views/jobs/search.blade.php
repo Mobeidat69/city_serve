@@ -26,7 +26,7 @@
                         <h2 class="section-title mb-2">Search Results</h2>
                     </div>
                 </div>
-                <ul class="job-listings mb-5">
+                <ul class="job-listings  p-3">
                     @if ($searches->count() > 0)
                         @foreach ($searches as $job)
                             <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
@@ -44,25 +44,25 @@
                                         <span class="icon-room"></span> {{ $job->location }}
                                     </div>
                                     <div class="job-listing-meta">
-                                        <span class="badge badge-danger"> {{ $job->category }}</span>
+                                        <span class="badge badge-danger"> {{ $job->category->name }}</span>
                                     </div>
                                 </div>
                             </li>
                         @endforeach
+                    @else
+                        <div class="container ">
+                            <div class="alert alert-danger" style="margin: 0">
+                                <p> We're very sorry we don't have what you searched yet, try again later </p>
+                            </div>
                 </ul>
-            @else
-                <div class="container">
-                    <div class="alert alert-success">
-                        <p> No Results Found </p>
-                    </div>
-                </div>
-                @endif
-
-
-
-
             </div>
-        </section>
+            @endif
 
 
-    @endsection
+
+
+    </div>
+    </section>
+
+
+@endsection
