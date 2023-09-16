@@ -12,7 +12,7 @@
   </div>
   </div>
 </section>
- <div class="container">
+ <div class="container mt-5">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <div class="row">
