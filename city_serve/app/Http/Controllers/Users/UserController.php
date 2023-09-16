@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Applications\Application;
+use App\Models\Tasks\Task;
 
 class UserController extends Controller
 {
@@ -32,16 +33,9 @@ class UserController extends Controller
     }
     public function savedJobs()
     {
-
-        $savedJobs = DB::table('jobsaved')
-            ->join('tasks', 'jobsaved.task_id', '=', 'tasks.id')
-            ->join('users', 'jobsaved.user_id', '=', 'users.id')
-            ->select(
-                'jobsaved.*',
-                'tasks.*', 
-                'users.*'  
-            )
-            ->get();
+        $savedJobs = Task::with('savedTable')->whereHas('savedTable', function ($query) {
+            $query->where('user_id', Auth::user()->id);
+        })->get();
 
         return view('users.savedjobs', compact('savedJobs'));
     }

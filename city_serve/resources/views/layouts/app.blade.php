@@ -8,9 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>City Serve</title>
+    
     <!-- Fonts -->
+    <link rel="icon" href="{{asset('assets/images/Asset 3.svg')}}">
+
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
@@ -38,6 +40,7 @@
     <meta property="og:url" content="URL_TO_YOUR_POST">
     <meta property="og:type" content="website">
 
+    
 
 </head>
 

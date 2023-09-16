@@ -64,7 +64,6 @@ class JobsController extends Controller
                 'task_id' => $jd,
                 'user_id' => Auth::user()->id,
             ]);
-            Task::find($request->task_id)->decrement('vacancy', 1);
             if ($applyJob) {
                 return redirect('/jobs/single/' . $request->task_id . '')->with('applied', 'you have applied to this Oppertuinity!');
             }
@@ -77,12 +76,12 @@ class JobsController extends Controller
         $job_title = $request->get('title');
         $job_region = $request->get('location');
         $job_type = $request->get('category_id');
-    
+
         $searches = Tasks::select('tasks.*', 'categories.name as category_name')
             ->join('categories', 'tasks.category_id', '=', 'categories.id')
-            ->where('tasks.title', 'LIKE', '%' . $job_title . '%') // Add this line to filter by title
+            ->where('tasks.title', 'LIKE', '%' . $job_title . '%')
             ->get();
-    
+
         return view('jobs.search', compact('searches'));
     }
     

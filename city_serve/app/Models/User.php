@@ -17,6 +17,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Application::class);
     }
+    public function tasks()
+    {
+        return $this->belongsToMany(Task::class, 'jobsaved', 'user_id', 'task_id');
+    }
     /**
      * The attributes that are mass assignable.
      *
