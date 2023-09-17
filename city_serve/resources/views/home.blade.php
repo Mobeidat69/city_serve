@@ -119,13 +119,11 @@
 
      <section class="site-section">
          <div class="container">
-
              <div class="row mb-5 justify-content-center">
                  <div class="col-md-7 text-center">
-                     <h2 class="section-title mb-2">{{ count($jobs) }} Job Listed</h2>
+                     <h2 class="section-title mb-2">Most Recent Opportunities</h2>
                  </div>
              </div>
-
              <ul class="job-listings mb-5">
                  @foreach ($jobs as $job)
                      <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
@@ -152,9 +150,9 @@
                  @endforeach
 
              </ul>
-
-
-
+             <div class="text-center">
+                 <a href="{{ route('categories') }}" class="btn btn-primary btn-lg text-white">Show More</a>
+             </div>
          </div>
      </section>
 
@@ -169,9 +167,12 @@
                  </div>
                  <div class="col-md-3 ml-auto">
                      @auth
-                         <a href="#" class="btn btn-warning btn-block btn-lg">Explore Opportunities</a>
+
+                         <a href="{{ route('categories') }}" class="btn btn-warning btn-block btn-lg">Explore
+                             Opportunities</a>
                      @else
-                         <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
+                         <a href="{{ route('login') }}" class="btn btn-warning btn-block btn-lg">Sign Up</a>
+
                      @endauth
                  </div>
              </div>
@@ -187,7 +188,7 @@
                      <div class="row justify-content-center">
                          <div class="col-md-11">
                              <h2 class="section-title mb-2">Our Valued Partners</h2>
-                             <p class="lead">At City_Serve, we take pride in our strong partnerships with non-profit
+                             <p class="lead">At City Serve, we take pride in our strong partnerships with non-profit
                                  organizations dedicated to making a positive impact in our communities. Together with our
                                  valued partners, we connect passionate volunteers with meaningful opportunities to support
                                  various causes and initiatives. Our collaboration with these organizations allows us to
@@ -239,7 +240,7 @@
                  <h2 class="section-title mb-2 text-center">Our Dedicated Volunteers</h2>
                  <p class="lead">Meet some of our dedicated volunteers who have made a positive impact
                      through their volunteer work. These individuals found meaningful opportunities through
-                     City_Serve, and their stories inspire us all.</p>
+                     City Serve, and their stories inspire us all.</p>
              </div>
          </div>
 
@@ -249,10 +250,8 @@
                  <div class="row">
                      <div class="col-lg-6 align-self-center text-center text-lg-left">
                          <blockquote>
-                             <p>&ldquo;Meet Mark, a passionate City_Serve volunteer, dedicated to making a positive impact
-                                 in his community through active participation in local initiatives. His story inspires
-                                 positive change through volunteering with City_Serve.&rdquo;</p>
-                             <p><cite> &mdash; Mark, @WFP</cite></p>
+                             <p>&ldquo;Meet Sameer, a dedicated City Serve volunteer, driven by his passion to create a positive impact in the Aqaba community through active involvement in local initiatives. His inspiring story serves as a beacon of hope, illuminating the path to positive change through volunteering with City Serve in our vibrant city.&rdquo;</p>
+                             <p><cite> &mdash; Sameer, @WFP</cite></p>
                          </blockquote>
                      </div>
                      <div class="col-lg-6 align-self-end text-center text-lg-right">
@@ -266,11 +265,8 @@
                  <div class="row">
                      <div class="col-lg-6 align-self-center text-center text-lg-left">
                          <blockquote>
-                             <p>&ldquo;Meet John, a committed City_Serve volunteer, embarked on his journey with a desire to
-                                 make a meaningful impact. He found diverse volunteer opportunities, from mentoring to
-                                 community event organization, through City_Serve. John's dedication is a testament to the
-                                 transformative power of volunteering, inspiring positive change in communities.&rdquo;</p>
-                             <p><cite> &mdash; John, @WWF</cite></p>
+                             <p>&ldquo;Meet Jameel, a dedicated City Serve volunteer, who embarked on his journey with a strong desire to make a meaningful impact in the heart of Amman. He discovered a wide array of volunteer opportunities, from mentoring to organizing community events, all through City Serve. Jameel's unwavering commitment stands as a testament to the transformative power of volunteering, igniting positive change within Amman's diverse communities..&rdquo;</p>
+                             <p><cite> &mdash; Jameel, @WWF</cite></p>
                          </blockquote>
                      </div>
                      <div class="col-lg-6 align-self-end text-center text-lg-right">

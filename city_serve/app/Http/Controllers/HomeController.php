@@ -27,8 +27,8 @@ class HomeController extends Controller
     {
         $jobs = Task::select('tasks.*')
             ->join('categories', 'tasks.category_id', '=', 'categories.id')
-            ->take(5)
-            ->orderBy('tasks.id', 'desc')
+            ->orderBy('tasks.created_at', 'desc')  // Order by the creation date (most recent first)
+            ->take(5)                               // Limit to 5 results
             ->get();
         $categories = Category::pluck('name');
         $candidates = Application::where('status', 1)->count();

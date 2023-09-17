@@ -15,6 +15,11 @@ class CategoriesController extends Controller
         $jobs = Task::where('category_id', $id)
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('categories.single', compact('jobs' , 'name'));
+        return view('categories.single', compact('jobs', 'name'));
+    }
+    public function allCategories()
+    {
+        $categories = Category::orderBy('created_at', 'desc')->get();
+        return view('categories.all', compact('categories',));
     }
 }

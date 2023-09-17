@@ -165,13 +165,13 @@
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share</h3>
                         <div class="px-3">
                             <a href="https://www.facebook.com/sharer/sharer.php?u=&quote='🌟 I just found an amazing volunteer opportunity on City Serve! They\'re making a difference, and I\'m excited to join in. Check it out and get involved! 🙌 Join us on www.CityServe.com')"
-                                class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
+                                class="pt-3 pb-3 pr-3 pl-0" target="_blank"><span class="icon-facebook"></span></a>
 
                             <a href="https://twitter.com/intent/tweet?text=🌟 I just found an amazing volunteer opportunity on City Serve! They're making a difference, and I'm excited to join in. Check it out and get involved! 🙌 join us on  www.cityServe.com #Volunteer #MakeADifference #Community "
-                                class="pt-3 pb-3 pr-3 pl-0"><span class="icon-twitter"></span></a>
+                                class="pt-3 pb-3 pr-3 pl-0" target="_blank"><span class="icon-twitter"></span></a>
 
                             <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('single.job', $job->id) }}"
-                                class="pt-3 pb-3 pr-3 pl-0"><span class="icon-linkedin"></span></a>
+                                class="pt-3 pb-3 pr-3 pl-0" target="_blank"><span class="icon-linkedin"></span></a>
                         </div>
                     </div>
                     <div class="bg-light p-3 border mt-3 rounded mb-4">

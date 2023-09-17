@@ -51,18 +51,34 @@ class UserController extends Controller
         Request()->validate([
             'name' => 'required|max:40',
             'bio' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'image|mimes:jpeg,png,jpg,gif',
+            'cv' => 'mimes:pdf,docx,doc',
         ]);
 
         $detils = User::find(Auth::user()->id);
 
-        $destinationPath = 'assets/images_users/';
-        $myimage = $request->file('image');
-        $filename =  User::max('id') + 1 . '_' . 'image.' . $myimage->getClientOriginalExtension();
-        $myimage->move(public_path($destinationPath), $filename);
+        if ($request->cv) {
+            if (File::exists(public_path('assets/cvs/' . $detils->cv))) {
+                File::delete(public_path('assets/cvs/' . $detils->cv));
+            }
+            $destinationPath = 'assets/cvs/';
+            $mycv = $request->file('cv');
+            $filename =  Auth::user()->id . '_' . 'cv.' . $mycv->getClientOriginalExtension();
+            $mycv->move(public_path($destinationPath), $filename);
+            $detils->update(['cv' => asset('assets/cvs/' . $filename)]);
+        }
+
+        if ($request->image) {
+            $destinationPath = 'assets/images_users/';
+            $myimage = $request->file('image');
+            $filename =  Auth::user()->id . '_' . 'image.' . $myimage->getClientOriginalExtension();
+            $myimage->move(public_path($destinationPath), $filename);
+            $detils->update([
+                'image' => asset('assets/images_users/' . $filename)
+            ]);
+        }
 
         $detils->update([
-            'image' => asset('assets/images_users/' . $filename),
             "name" => $request->name,
             "bio" => $request->bio,
         ]);
@@ -76,20 +92,9 @@ class UserController extends Controller
     }
     public function updateCV(Request $request)
     {
-        $oldCV = User::find(Auth::user()->id);
 
-        if (File::exists(public_path('assets/cvs/' . $oldCV->cv))) {
-            File::delete(public_path('assets/cvs/' . $oldCV->cv));
-        } else {
-        }
-        $destinationPath = 'assets/cvs/';
-        $mycv = $request->file('cv');
-        $filename =  User::max('id') + 1 . '_' . 'cv.' . $mycv->getClientOriginalExtension();
-        $mycv->move(public_path($destinationPath), $filename);
 
-        $oldCV->update([
-            'cv' => asset('assets/cvs/' . $filename),
-        ]);
+
         return redirect('/users/profile')->with('update', 'CV updated Successfully');
     }
 }

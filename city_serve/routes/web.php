@@ -33,28 +33,31 @@ Route::get('/terms', function(){
     return view('pages.terms');
 })->name('terms');
 
-Route::group(['prefix' => 'jobs' , 'middleware' =>'auth:web' ], function () {
+Route::group(['prefix' => 'jobs', 'middleware' => 'auth:web'], function () {
     Route::post('save', [App\Http\Controllers\Jobs\JobsController::class, 'saveJob'])->name('save.job');
     Route::post('apply', [App\Http\Controllers\Jobs\JobsController::class, 'jobApply'])->name('apply.job');
 });
 Route::get('jobs/single/{id}', [App\Http\Controllers\Jobs\JobsController::class, 'single'])->name('single.job');
 Route::any('jobs/search', [App\Http\Controllers\Jobs\JobsController::class, 'search'])->name('search.job');
 
-Route::group(['prefix' => 'users' , 'middleware' =>'auth:web'], function () {
+Route::group(['prefix' => 'users', 'middleware' => 'auth:web'], function () {
     Route::get('profile', [App\Http\Controllers\Users\UserController::class, 'profile'])->name('profile');
     Route::get('applications', [App\Http\Controllers\Users\UserController::class, 'applications'])->name('applications');
     Route::get('savedjobs', [App\Http\Controllers\Users\UserController::class, 'savedJobs'])->name('saved.jobs');
     Route::get('edit-details', [App\Http\Controllers\Users\UserController::class, 'editDetails'])->name('edit.Details');
     Route::post('edit-details', [App\Http\Controllers\Users\UserController::class, 'updateDetails'])->name('update.details');
-    Route::get('edit-cv', [App\Http\Controllers\Users\UserController::class, 'editCV'])->name('edit.cv');
-    Route::post('edit-cv', [App\Http\Controllers\Users\UserController::class, 'updateCV'])->name('update.cv');
     Route::post('edit-image', [App\Http\Controllers\Users\UserController::class, 'updateImage'])->name('update.image');
 });
 Route::get('/categories/single/{id}', [App\Http\Controllers\Categories\CategoriesController::class, 'singleCategory'])->name('categories.single');
+Route::get('/categories', [App\Http\Controllers\Categories\CategoriesController::class, 'allCategories'])->name('categories');
 
 Auth::routes();
 
 
+
+Route::get('/23423', function(){
+    return view('admin.about');
+});
 
 
 

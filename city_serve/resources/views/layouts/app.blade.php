@@ -34,14 +34,6 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <meta charset="utf-8">
-    <meta property="og:title" content="🌟 I just found an amazing volunteer opportunity on City Serve!">
-    <meta property="og:description"
-        content="They're making a difference, and I'm excited to join in. Check it out and get involved! 🙌">
-    <meta property="og:image" content="URL_TO_YOUR_IMAGE">
-    <meta property="og:url" content="URL_TO_YOUR_POST">
-    <meta property="og:type" content="website">
-
-
 
 </head>
 
@@ -61,7 +53,7 @@
                                     class="nav-link active">Home</a></li>
                             <li><a href="{{ route('about') }}">About</a></li>
 
-
+                            <li><a href="{{ route('categories') }}">Categories</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
                             @guest
                                 @if (Route::has('login'))
@@ -87,6 +79,7 @@
                                         <a class="dropdown-item" href="{{ route('edit.cv') }}">
                                             Update CV
                                         </a>
+
                                         <a class="dropdown-item" href="{{ route('applications') }}">
                                             Applications
                                         </a>
@@ -108,7 +101,6 @@
 
                         </ul>
                     </nav>
-
                     <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
                         <div class="ml-auto ">
                             <div class="site-mobile-menu site-navbar-target">
