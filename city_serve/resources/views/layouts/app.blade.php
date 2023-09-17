@@ -34,7 +34,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <meta charset="utf-8">
-    
+
 </head>
 
 <body>
@@ -52,6 +52,7 @@
                             <li style="padding-left: 544px"><a href="{{ route('home') }}"
                                     class="nav-link active">Home</a></li>
                             <li><a href="{{ route('about') }}">About</a></li>
+
                             <li><a href="{{ route('categories') }}">Categories</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
                             
@@ -76,6 +77,10 @@
                                         <a class="dropdown-item" href="{{ route('edit.Details') }}">
                                             Update Profile
                                         </a>
+                                        <a class="dropdown-item" href="{{ route('edit.cv') }}">
+                                            Update CV
+                                        </a>
+
                                         <a class="dropdown-item" href="{{ route('applications') }}">
                                             Applications
                                         </a>
@@ -146,22 +151,21 @@
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <h3>Company</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Resources</a></li>
+                        <li><a href="{{ route('about') }}">About Us</a></li>
+                        <li><a href="{{ route('about') }}">Contact Us</a></li>
+                        {{-- <li><a href="#">Blog</a></li> --}}
                     </ul>
                 </div>
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <h3>Support</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="{{ route('support') }}">Support</a></li>
+                        <li><a href="{{ route('privacy') }}">Privacy</a></li>
+                        <li><a href="{{ route('terms') }}">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
-                    <h3>Contact Us</h3>
+                    <h3>Follow Us</h3>
                     <div class="footer-social">
                         <a href="#"><span class="icon-facebook"></span></a>
                         <a href="#"><span class="icon-twitter"></span></a>
