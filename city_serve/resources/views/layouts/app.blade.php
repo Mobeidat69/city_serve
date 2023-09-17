@@ -54,6 +54,7 @@
                             <li><a href="{{ route('about') }}">About</a></li>
                             <li><a href="{{ route('categories') }}">Categories</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
+                            
                             @guest
                                 @if (Route::has('login'))
                                     <li><a href="{{ route('login') }}">Log In</a></li>
@@ -81,6 +82,7 @@
                                         <a class="dropdown-item" href="{{ route('saved.jobs') }}">
                                             Saved Jobs
                                         </a>
+                                        
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

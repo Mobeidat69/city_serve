@@ -167,10 +167,10 @@
                  </div>
                  <div class="col-md-3 ml-auto">
                      @auth
-                         <a href="{{ route('categories') }}" class="btn btn-warning btn-block btn-lg">Explore
-                             Opportunities</a>
-                     @else
-                         <a href="{{ route('login') }}" class="btn btn-warning btn-block btn-lg">Sign Up</a>
+                     <a href="{{ route('categories') }}" class="btn btn-warning btn-block btn-lg">Explore
+                        Opportunities</a>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-warning btn-block btn-lg">Sign Up</a>
                      @endauth
                  </div>
              </div>
