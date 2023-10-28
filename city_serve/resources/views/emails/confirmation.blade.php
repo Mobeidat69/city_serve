@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Volunteering Confirmation</title>
+    <title>Jobing Confirmation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,12 +40,12 @@
 <body>
     <div class="container">
         <h1>Hi, {{ $mailData->name }}, we hope you're doing well!</h1>
-        <p>Congratulations! You have been accepted for a volunteering role.</p>
+        <p>Congratulations! You have been accepted for a working role.</p>
         <p>We are excited to have you on board and look forward to working together to make a positive impact.</p>
         <p>We will contact you soon for the rest of the information.</p>
         <p>Thank you for your commitment and dedication to our cause.</p>
         <p>Best regards,</p>
-        <p>City Serve</p>
+        <p>Shaghenli</p>
     </div>
 </body>
 

@@ -2,7 +2,7 @@
 
 
 @section('content')
-<section class="section-hero overlay inner-page bg-image" style="background-image: url('{{asset('assets/images/home-bg.svg')}}');" id="home-section">
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('{{asset('assets/images/home-bg.jpg')}}');" id="home-section">
     <div class="container">
       <div class="row">
         <div class="col-md-7">

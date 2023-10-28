@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Volunteering Application Rejection</title>
+    <title>working Application Rejection</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,12 +40,12 @@
 <body>
     <div class="container">
         <h1>Hi, {{ $mailData->name }}, we hope you're doing well!</h1>
-        <p>We regret to inform you that your application for the volunteering role has been rejected.</p>
+        <p>We regret to inform you that your application for the working role has been rejected.</p>
         <p>We appreciate your interest in our organization and the time you invested in applying.</p>
         <p>Please don't be discouraged and consider applying for other opportunities with us in the future.</p>
         <p>Thank you for your understanding.</p>
         <p>Best regards,</p>
-        <p>City Serve</p>
+        <p>Shaghenli</p>
     </div>
 </body>
 

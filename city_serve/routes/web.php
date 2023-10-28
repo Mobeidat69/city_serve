@@ -93,6 +93,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     Route::post('/edit-category/{id}', [AdminsController::class, 'updateCategory'])->name('update.category');
     Route::delete('/delete-category/{id}', [AdminsController::class, 'deleteCategory'])->name('delete.category');
     // END OF CATEGORIES PAGE ROUTES
+// Route::post('admins/logout', 'Admins\AdminsController@logout')->name('admins.logout');
 
 
     // Tasks PAGE ROUTES

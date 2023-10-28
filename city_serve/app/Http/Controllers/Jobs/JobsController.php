@@ -71,30 +71,30 @@ class JobsController extends Controller
     }
 
 
-    public function search(Request $request)
-    {
-        $title = $request->input('title');
-        $location = $request->input('location');
-        $category = $request->input('category');
-    
-        $searches = Task::select('tasks.*', 'categories.name as category_name')
-            ->join('categories', 'tasks.category_id', '=', 'categories.id')
-            ->where(function ($query) use ($title, $location, $category) {
-                if ($title) {
-                    $query->where('tasks.title', 'LIKE', '%' . $title . '%');
-                }
-                if ($location) {
-                    $query->Where('tasks.location', 'LIKE', '%' . $location . '%');
-                }
-                if ($category) {
-                    $query->        Where('categories.name', 'LIKE', '%' . $category . '%');
-                }
-            })
-            ->orderBy('tasks.created_at', 'desc')
-            ->get();
-    
-        return view('jobs.search', compact('searches'));
-    }
-    
+  public function search(Request $request)
+{
+    $title = $request->input('title');
+    $location = $request->input('location');
+    $category = $request->input('category');
+
+    $searches = Task::select('tasks.*', 'categories.name as category_name')
+        ->join('categories', 'tasks.category_id', '=', 'categories.id')
+        ->where(function ($query) use ($title, $location, $category) {
+            if ($title) {
+                $query->where('tasks.title', 'like', '%' . strtolower(trim($title)) . '%');
+            }
+            if ($location) {
+                $query->where('tasks.location', 'like', '%' . strtolower(trim($location)) . '%');
+            }
+            if ($category) {
+                $query->where('categories.name', 'like', '%' . strtolower(trim($category)) . '%');
+            }
+        })
+        ->orderBy('tasks.created_at', 'desc')
+        ->get();
+
+    return view('jobs.search', compact('searches'));
+}
+
     
 }

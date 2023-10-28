@@ -3,7 +3,7 @@
     {{-- huda --}}
     <!-- HOME -->
     <section class="section-hero overlay inner-page bg-image"
-        style="background-image: url('{{ asset('assets/images/home-bg.svg') }}')" id="home-section">
+        style="background-image: url('{{ asset('assets/images/home-bg.jpg') }}')" id="home-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -164,10 +164,10 @@
                     <div class="bg-light p-3 border rounded">
                         <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share</h3>
                         <div class="px-3">
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=&quote='🌟 I just found an amazing volunteer opportunity on City Serve! They\'re making a difference, and I\'m excited to join in. Check it out and get involved! 🙌 Join us on www.CityServe.com')"
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=&quote='🌟 I just found an amazing work opportunity on Shaghenli! They\'re making a difference, and I\'m excited to join in. Check it out and get involved! 🙌 Join us on www.CityServe.com')"
                                 class="pt-3 pb-3 pr-3 pl-0" target="_blank"><span class="icon-facebook"></span></a>
 
-                            <a href="https://twitter.com/intent/tweet?text=🌟 I just found an amazing volunteer opportunity on City Serve! They're making a difference, and I'm excited to join in. Check it out and get involved! 🙌 join us on  www.cityServe.com #Volunteer #MakeADifference #Community "
+                            <a href="https://twitter.com/intent/tweet?text=🌟 I just found an amazing work opportunity on Shaghenli! They're making a difference, and I'm excited to join in. Check it out and get involved! 🙌 join us on  www.cityServe.com #Job #MakeADifference #Community "
                                 class="pt-3 pb-3 pr-3 pl-0" target="_blank"><span class="icon-twitter"></span></a>
 
                             <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('single.job', $job->id) }}"

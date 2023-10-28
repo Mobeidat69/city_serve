@@ -3,7 +3,7 @@
 
 @section('content')
     <section class="section-hero overlay inner-page bg-image"
-        style="background-image: url({{ asset('assets/images/home-bg.svg') }});" id="home-section">
+        style="background-image: url({{ asset('assets/images/home-bg.jpg') }});" id="home-section">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-7">

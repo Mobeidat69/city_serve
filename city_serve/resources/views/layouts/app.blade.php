@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>City Serve</title>
+    <title>Shaghenli</title>
 
     <!-- Fonts -->
     <link rel="icon" href="{{ asset('assets/images/Asset 3.svg') }}">
@@ -44,15 +44,17 @@
         <header class="site-navbar mt-4">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="site-logo col-6"><a href="{{ url('/') }}"><img
-                                src="{{ asset('assets/images/Asset_4.svg') }}" style="filter: invert(1);"></a></div>
+                    <div class="site-logo col-6">
+                        <a href="{{ url('/') }}">
+                            <img src="{{ asset('assets/images/logo_eng.png') }}" style="width: 28%">
+                        </a>
+                    </div>
 
                     <nav class="mx-auto site-navigation d-flex justify-content-around">
                         <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
                             <li style="padding-left: 544px"><a href="{{ route('home') }}"
                                     class="nav-link active">Home</a></li>
                             <li><a href="{{ route('about') }}">About</a></li>
-
                             <li><a href="{{ route('categories') }}">Categories</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
                             
@@ -104,13 +106,21 @@
                         <div class="ml-auto ">
                             <div class="site-mobile-menu site-navbar-target">
                                 <div class="site-mobile-menu-header">
-                                    <div class="site-mobile-menu-close  ">
+                                    <div class="site-mobile-menu-close">
                                         <span class="icon-close2 js-menu-toggle d-none"></span>
                                     </div>
                                 </div>
-                                <div class="site-mobile-menu-body"></div>
-                            </div> <!-- .site-mobile-menu -->
-                        </div>
+                                <div >
+                                    <!-- Add your mobile menu items here -->
+                                    <ul class="site-mobile-menu-body">
+                                        <li><a href="{{ route('home') }}">Home</a></li>
+                                        <li><a href="{{ route('about') }}">About</a></li>
+                                        <li><a href="{{ route('categories') }}">Categories</a></li>
+                                        <li><a href="{{ route('contact') }}">Contact</a></li>
+                                        <!-- Add your authentication-related links for guest and logged-in users -->
+                                    </ul>
+                                </div>
+                            </div>
                         <a href="#"
                             class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
                                 class="icon-menu h3 m-0 p-0 mt-2"></span></a>
@@ -141,7 +151,7 @@
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <h3>Search Trending</h3>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('login') }}">Apply for a volunteering opportunity</a></li>
+                        <li><a href="{{ route('login') }}">Apply for a Jobing opportunity</a></li>
 
                     </ul>
                 </div>
@@ -179,8 +189,7 @@
                             Copyright &copy;
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script> All rights reserved | City Serve, Serving Communities with <i
-                                class="icon-heart text-danger" aria-hidden="true"></i>
+                            </script> All rights reserved | Shaghenli, Unlocking Opportunities, Empowering Careers
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </small></p>
                 </div>

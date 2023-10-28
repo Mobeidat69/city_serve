@@ -27,7 +27,7 @@ class DemoMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'City Serve',
+            subject: 'Shaghenli',
         );
     }
 

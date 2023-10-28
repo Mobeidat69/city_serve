@@ -11,9 +11,21 @@ use App\Models\Applications\Application;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminsController extends Controller
 {
+    public function index()
+{
+    $opportunitiesCount = Task::count();
+    $categoriesCount = Category::count();
+    $adminsCount = Admin::count();
+    $applicationsCount = Application::count();
+
+    return view("admins.index", compact('opportunitiesCount', 'categoriesCount', 'adminsCount', 'applicationsCount'));
+}
+
     public function viewLogin()
     {
         return view("admins.view-login");
@@ -30,11 +42,12 @@ class AdminsController extends Controller
         return redirect()->back()->with(['error' => 'Error logging in']);
     }
 
-    public function index()
-    {
-        $admins = Admin::select()->count();
-        return view("admins.index", compact('admins'));
-    }
+    // public function index()
+    // {
+    //     $admins = Admin::select()->count();
+
+    //     return view("admins.index", compact('admins'));
+    // }
     public function admins()
     {
         $admins = Admin::all();
@@ -163,6 +176,11 @@ class AdminsController extends Controller
 
         return redirect()->route('view.cetegories')->with('create', 'A category has been created');
     }
+    public function logout()
+{
+    Auth::guard('admin')->logout();
+    return redirect()->route('admins.viewLogin');
+}
     public function deleteCategory(Request $request)
     {
         $category = Category::find($request->id);

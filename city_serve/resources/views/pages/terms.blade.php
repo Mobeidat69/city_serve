@@ -3,7 +3,7 @@
  @section('content')
      <!-- HOME -->
      <section class="mt-n4 section-hero overlay inner-page bg-image"
-         style="margin-top:-24px; background-image: url({{ asset('assets/images/home-bg.svg') }});" id="home-section">
+         style="margin-top:-24px; background-image: url({{ asset('assets/images/home-bg.jpg') }});" id="home-section">
          <div class="container">
              <div class="row">
                  <div class="col-md-7">
@@ -22,12 +22,12 @@
 
      <div class="container mt-5">
          <h1 class="mb-4">Terms of Service</h1>
-         <p>Welcome to City Serve! These Terms of Service outline the rules and regulations for using our platform. By
-             accessing this website, we assume you accept these terms and conditions. Do not continue to use City Serve if
+         <p>Welcome to Shaghenli! These Terms of Service outline the rules and regulations for using our platform. By
+             accessing this website, we assume you accept these terms and conditions. Do not continue to use Shaghenli if
              you do not agree to take all of the terms and conditions stated on this page.</p>
 
          <h3 class="mt-4">1. License to Use</h3>
-         <p>City Serve and its licensors own the intellectual property rights for all material on City Serve. You are
+         <p>Shaghenli and its licensors own the intellectual property rights for all material on Shaghenli. You are
              granted a limited license only for purposes of viewing the material contained on this website.</p>
 
          <h3 class="mt-4">2. Restrictions</h3>
@@ -41,14 +41,14 @@
          </ul>
 
          <h3 class="mt-4">3. Disclaimer</h3>
-         <p>This website is provided "as is," with all faults, and City Serve makes no express or implied representations or
+         <p>This website is provided "as is," with all faults, and Shaghenli makes no express or implied representations or
              warranties, of any kind related to this website or the materials contained on this website. Additionally,
              nothing contained on this website shall be interpreted as advising you.</p>
 
          <h3 class="mt-4">4. Limitation of Liability</h3>
-         <p>In no event shall City Serve, nor any of its officers, directors, and employees, be held liable for anything
+         <p>In no event shall Shaghenli, nor any of its officers, directors, and employees, be held liable for anything
              arising out of or in any way connected with your use of this website, whether such liability is under contract.
-             City Serve, including its officers, directors, and employees, shall not be held liable for any indirect,
+             Shaghenli, including its officers, directors, and employees, shall not be held liable for any indirect,
              consequential, or special liability arising out of or in any way related to your use of this website.</p>
 
          <h3 class="mt-4">5. Severability</h3>
@@ -65,7 +65,7 @@
          <div class="card p-5">
              <h2 class="card-header">Privacy Policy</h2>
              <div class="card-body">
-                 <p>At City Serve, we take your privacy seriously and are committed to protecting your personal information.
+                 <p>At Shaghenli, we take your privacy seriously and are committed to protecting your personal information.
                      This
                      Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your
                      personal
@@ -79,15 +79,15 @@
                      we
                      collect include:</p>
                  <ul>
-                     <li><strong>Personal Information:</strong> When you sign up as a volunteer or non-profit organization,
+                     <li><strong>Personal Information:</strong> When you sign up as a Job or non-profit organization,
                          we
                          may
                          collect personal information such as your name, email address, phone number, and location.</li>
-                     <li><strong>Volunteer Preferences:</strong> We collect information about your volunteer preferences and
-                         interests to match you with suitable volunteer opportunities.</li>
+                     <li><strong>Job Preferences:</strong> We collect information about your Job preferences and
+                         interests to match you with suitable Job opportunities.</li>
                      <li><strong>Non-profit Organization Information:</strong> For non-profit organizations looking for
-                         volunteers,
-                         we collect information about your organization, mission, and volunteer needs.</li>
+                         Jobs,
+                         we collect information about your organization, mission, and Job needs.</li>
                      <li><strong>Usage Data:</strong> We collect data on how you interact with our platform, including your
                          browsing
                          activity and the pages you visit.</li>
@@ -96,15 +96,15 @@
                  <h3 class="mt-4">2. How We Use Your Information</h3>
                  <p>We use your information to:</p>
                  <ul>
-                     <li><strong>Match Volunteers and Non-profit Organizations:</strong> We use your preferences to connect
-                         volunteers with non-profit organizations seeking assistance.</li>
+                     <li><strong>Match Jobs and Non-profit Organizations:</strong> We use your preferences to connect
+                         Jobs with non-profit organizations seeking assistance.</li>
                      <li><strong>Communicate:</strong> We use your contact information to send you important updates,
                          newsletters,
-                         and information about volunteer opportunities.</li>
+                         and information about Job opportunities.</li>
                      <li><strong>Improve Our Services:</strong> We analyze usage data to enhance our platform, making it
                          easier
                          for
-                         volunteers and organizations to connect.</li>
+                         Jobs and organizations to connect.</li>
                  </ul>
 
                  <h3 class="mt-4">3. Data Security</h3>

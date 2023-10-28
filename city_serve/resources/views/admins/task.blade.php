@@ -56,10 +56,10 @@
             </div>
         </div>
     </div>
-
+{{-- 
     <div class="col-md-12" style="text-align: right;">
         <button class="btn btn-success" >Export participants</button>
-    </div>
+    </div> --}}
 
 </div>
 @endsection

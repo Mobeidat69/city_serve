@@ -5,6 +5,7 @@
     position: absolute;
     width: 100%;
     top: 2rem;
+    
 }
 a{
     text-decoration: none !important;
@@ -794,7 +795,7 @@ h4 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(137, 186, 22, 0.9);
+    background: rgba(15, 132, 215, 0.9);
     z-index: 1;
 }
 .bg-image.overlay-primary > .container {
@@ -1762,7 +1763,7 @@ h4 {
     width: 40px;
     height: 40px;
     position: relative;
-    background: #89ba16;
+    background: rgba(15, 132, 215, 0.9);
     border-radius: 50%;
     text-decoration: none !important;
 }

@@ -3,7 +3,7 @@
  @section('content')
      <!-- HOME -->
      <section class="mt-n4 section-hero overlay inner-page bg-image"
-         style="margin-top:-24px; background-image: url({{ asset('assets/images/home-bg.svg') }});" id="home-section">
+         style="margin-top:-24px; background-image: url({{ asset('assets/images/home-bg.jpg') }});" id="home-section">
          <div class="container">
              <div class="row">
                  <div class="col-md-7">
@@ -22,7 +22,7 @@
          <div class="card p-5">
              <h2 class="card-header">Privacy Policy</h2>
              <div class="card-body">
-                 <p>At City Serve, we take your privacy seriously and are committed to protecting your personal information.
+                 <p>At Shaghenli, we take your privacy seriously and are committed to protecting your personal information.
                      This
                      Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your
                      personal
@@ -36,15 +36,15 @@
                      we
                      collect include:</p>
                  <ul>
-                     <li><strong>Personal Information:</strong> When you sign up as a volunteer or non-profit organization,
+                     <li><strong>Personal Information:</strong> When you sign up as a Job or non-profit organization,
                          we
                          may
                          collect personal information such as your name, email address, phone number, and location.</li>
-                     <li><strong>Volunteer Preferences:</strong> We collect information about your volunteer preferences and
-                         interests to match you with suitable volunteer opportunities.</li>
+                     <li><strong>Job Preferences:</strong> We collect information about your work preferences and
+                         interests to match you with suitable work opportunities.</li>
                      <li><strong>Non-profit Organization Information:</strong> For non-profit organizations looking for
-                         volunteers,
-                         we collect information about your organization, mission, and volunteer needs.</li>
+                         Jobs,
+                         we collect information about your organization, mission, and Job needs.</li>
                      <li><strong>Usage Data:</strong> We collect data on how you interact with our platform, including your
                          browsing
                          activity and the pages you visit.</li>
@@ -53,15 +53,15 @@
                  <h3 class="mt-4">2. How We Use Your Information</h3>
                  <p>We use your information to:</p>
                  <ul>
-                     <li><strong>Match Volunteers and Non-profit Organizations:</strong> We use your preferences to connect
-                         volunteers with non-profit organizations seeking assistance.</li>
+                     <li><strong>Match Jobs and Non-profit Organizations:</strong> We use your preferences to connect
+                         Jobs with non-profit organizations seeking assistance.</li>
                      <li><strong>Communicate:</strong> We use your contact information to send you important updates,
                          newsletters,
-                         and information about volunteer opportunities.</li>
+                         and information about Job opportunities.</li>
                      <li><strong>Improve Our Services:</strong> We analyze usage data to enhance our platform, making it
                          easier
                          for
-                         volunteers and organizations to connect.</li>
+                         Jobs and organizations to connect.</li>
                  </ul>
 
                  <h3 class="mt-4">3. Data Security</h3>
@@ -95,7 +95,7 @@
 
      {{-- <div class="container mt-5">
          <h1 class="mb-4">Privacy Policy</h1>
-         <p>At City Serve, we take your privacy seriously and are committed to protecting your personal information. This
+         <p>At Shaghenli, we take your privacy seriously and are committed to protecting your personal information. This
              Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal
              information. By using our platform and services, you consent to the practices described in this Privacy Policy.
          </p>
@@ -104,12 +104,12 @@
          <p>We collect various types of information to provide and improve our services to you. The types of information we
              collect include:</p>
          <ul>
-             <li><strong>Personal Information:</strong> When you sign up as a volunteer or non-profit organization, we may
+             <li><strong>Personal Information:</strong> When you sign up as a Job or non-profit organization, we may
                  collect personal information such as your name, email address, phone number, and location.</li>
-             <li><strong>Volunteer Preferences:</strong> We collect information about your volunteer preferences and
-                 interests to match you with suitable volunteer opportunities.</li>
-             <li><strong>Non-profit Organization Information:</strong> For non-profit organizations looking for volunteers,
-                 we collect information about your organization, mission, and volunteer needs.</li>
+             <li><strong>Job Preferences:</strong> We collect information about your Job preferences and
+                 interests to match you with suitable Job opportunities.</li>
+             <li><strong>Non-profit Organization Information:</strong> For non-profit organizations looking for Jobs,
+                 we collect information about your organization, mission, and Job needs.</li>
              <li><strong>Usage Data:</strong> We collect data on how you interact with our platform, including your browsing
                  activity and the pages you visit.</li>
          </ul>
@@ -117,12 +117,12 @@
          <h3 class="mt-4">2. How We Use Your Information</h3>
          <p>We use your information to:</p>
          <ul>
-             <li><strong>Match Volunteers and Non-profit Organizations:</strong> We use your preferences to connect
-                 volunteers with non-profit organizations seeking assistance.</li>
+             <li><strong>Match Jobs and Non-profit Organizations:</strong> We use your preferences to connect
+                 Jobs with non-profit organizations seeking assistance.</li>
              <li><strong>Communicate:</strong> We use your contact information to send you important updates, newsletters,
-                 and information about volunteer opportunities.</li>
+                 and information about Job opportunities.</li>
              <li><strong>Improve Our Services:</strong> We analyze usage data to enhance our platform, making it easier for
-                 volunteers and organizations to connect.</li>
+                 Jobs and organizations to connect.</li>
          </ul>
 
          <h3 class="mt-4">3. Data Security</h3>
